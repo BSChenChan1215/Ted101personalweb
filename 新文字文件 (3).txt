@@ -1,0 +1,4 @@
+https://docs.webmix.cc/html-and-css/
+https://docs.webmix.cc/javascript/
+https://docs.webmix.cc/css-animation/
+https://docs.webmix.cc/responsive-web-design/

@@ -1,0 +1,865 @@
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "黑體";
+    }
+    
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .item_groups {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .wrap {
+        max-width: 1920px;
+        margin: auto;
+        /* min-width: 1200px; */
+    }
+    /* nav */
+    
+    #nav {
+        width: 100%;
+        /* background-color: rgba(255, 0, 0, 0.3); */
+        margin: 0 auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+    }
+    
+    #nav img {
+        height: 100px;
+        width: 100px;
+        vertical-align: middle;
+    }
+    
+    #nav .items {
+        width: 800px;
+    }
+    
+    #nav .items ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+    
+    #nav .icons i {
+        width: 100px;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #nav .icons i:hover {
+        color: red;
+    }
+    
+    #nav .bottom_line1 strong,
+    #nav .bottom_line2 strong,
+    #nav .bottom_line3 strong,
+    #nav .bottom_line4 strong {
+        /* border:2px solid yellow; */
+        padding-bottom: 3px;
+        color: white;
+        text-decoration: none;
+        position: relative;
+    }
+    
+    #nav .bottom_line2 {
+        transform: translateX(10%);
+    }
+    
+    #nav .bottom_line3 {
+        transform: translateX(20%);
+    }
+    
+    #nav .bottom_line2 strong::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: -20%;
+        background-color: white;
+        height: 3px;
+        width: 100%;
+    }
+    
+    #nav .bottom_line1 strong::after,
+    #nav .bottom_line3 strong::after,
+    #nav .bottom_line4 strong::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: -20%;
+        background-color: white;
+        height: 3px;
+        width: 0px;
+        transition: width .5s;
+    }
+    
+    #nav .bottom_line1 a:hover strong::after,
+    #nav .bottom_line3 a:hover strong::after,
+    #nav .bottom_line4 a:hover strong::after {
+        width: 100%;
+    }
+    
+    #nav .icons {
+        width: 100px;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #nav .nav strong {
+        font-size: 20px;
+    }
+    
+    .hb {
+        cursor: pointer;
+        border: 2px solid pink;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        background-color: pink;
+        top: 10px;
+        right: 10px;
+        z-index: 99;
+        display: none;
+        border-radius: 25%;
+        transform: scale(1);
+        transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+    }
+    
+    .hb span {
+        width: 36px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+        display: block;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        margin: auto;
+        transition: .2s;
+    }
+    
+    .hb span:first-child {
+        transform: translateY(-6px);
+    }
+    
+    .hb span:last-child {
+        transform: translateY(6px);
+    }
+    
+    #menu-control {
+        display: none;
+    }
+    
+    #menu-control:checked~.hb {
+        background-color: pink;
+        border-radius: 50%;
+        transform: scale(1.2);
+    }
+    
+    #menu-control:checked~.hb span:nth-child(2) {
+        display: none;
+    }
+    
+    #menu-control:checked~.hb span:first-child {
+        transform: translateY(0px) rotate(45deg);
+    }
+    
+    #menu-control:checked~.hb span:last-child {
+        transform: translateY(0px) rotate(135deg);
+    }
+    
+    .nav1 {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        transition: 1s;
+    }
+    
+    .nav1 a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 5px 5px 5px .5;
+        padding: 10px 20px;
+        border-bottom: 1px dotted #666;
+    }
+    
+    #menu-control:checked~.nav1 {
+        max-height: calc(100vh - 60px);
+    }
+    /* banner */
+    
+    #banner .image {
+        background-image: url(img/由布院1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #banner_phone {
+        display: none;
+    }
+    
+    #banner .banner_words {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        height: 100px;
+        color: white;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: rgba(240, 128, 128, 0.6);
+    }
+    /* bread */
+    
+    #bread .bread_words {
+        color: black;
+        padding: 20px 0 50px 0;
+        font-size: 20px;
+    }
+    /* tripimage */
+    
+    #tripimage .image {
+        background-image: url(img/九州_魔女宅急便街道.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+        width: 1080px;
+        height: 500px;
+        border-radius: 40px;
+    }
+    /* tripmap */
+    
+    #tripmap {
+        padding-bottom: 100px;
+        width: 100%;
+    }
+    
+    #tripmap h2 {
+        padding: 40px 0;
+        text-align: center;
+        font-size: 50px;
+    }
+    
+    #tripmap .trip_address {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+    
+    #tripmap .tripwords strong {
+        font-size: 16px;
+    }
+    
+    #tripmap .item_map iframe {
+        box-shadow: 5px 5px 5px gray;
+    }
+    /* triprecommend */
+    
+    #triprecommend {
+        width: 100%;
+        padding: 100px 0;
+    }
+    
+    #triprecommend h2 {
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    
+    #triprecommend .item_group1 {
+        border: 1px solid gray;
+        height: 300px;
+        width: 500px;
+        box-shadow: 3px 3px 3px gray;
+        background-color: white;
+        padding: 5px;
+    }
+    
+    #triprecommend .trip_words1 {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #triprecommend .trip_words1 h4 {
+        font-size: 20px;
+    }
+    
+    #triprecommend .trip_words1 p {
+        border: 1px solid gray;
+        border-radius: 20px;
+        background-color: aqua;
+        font-size: 14px;
+    }
+    
+    #triprecommend .trip_words1 h3 {
+        font-size: 28px;
+        padding: 5px 0 0 5px;
+    }
+    
+    #triprecommend .trip_words1 h4 {
+        font-size: 15px;
+        padding: 5px 5px 0 0;
+        background-color: aqua;
+        border-radius: 50px;
+        border: 1px solid aqua;
+    }
+    
+    #triprecommend .trip_img1 {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #triprecommend .trip_img1 img {
+        display: inline-block;
+        height: 200px;
+        width: 200px;
+        box-shadow: 1px 1px 1px pink;
+        border: 1px solid pink;
+    }
+    
+    #triprecommend .trip1_address {
+        padding-top: 5px;
+    }
+    
+    #triprecommend .trip1_contents {
+        padding: 10px;
+        text-align: justify;
+    }
+    
+    #triprecommend .trip1_link p {
+        padding: 20px 0 0 5px;
+        color: blue;
+    }
+    /* groups2 */
+    
+    #triprecommend .item_group2 {
+        border: 1px solid gray;
+        height: 300px;
+        width: 500px;
+        box-shadow: 3px 3px 3px gray;
+        background-color: white;
+        padding: 5px;
+    }
+    
+    #triprecommend .trip_words2 {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #triprecommend .trip_words2 h3 {
+        font-size: 26px;
+        padding: 3px 0 0 5px;
+    }
+    
+    #triprecommend .trip_words2 h4 {
+        font-size: 15px;
+        padding: 5px 5px 0 0;
+        background-color: aqua;
+        border-radius: 50px;
+        border: 1px solid aqua;
+    }
+    
+    #triprecommend .trip2_contents {
+        padding: 5px 5px 5px 5px;
+        text-align: justify;
+    }
+    
+    #triprecommend .trip_img2 {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #triprecommend .trip_img2 img {
+        display: inline-block;
+        height: 200px;
+        width: 200px;
+        box-shadow: 1px 1px 1px pink;
+        border: 1px solid gray;
+    }
+    
+    #triprecommend .trip2_link p {
+        padding: 15px 0 0 5px;
+        color: blue;
+    }
+    /* ig_words */
+    
+    #ig_words {
+        text-align: center;
+        font-size: 40px;
+    }
+    /* fansrecommends */
+    
+    body {
+        background: #fff;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        background-image: url(img/漫畫一.png);
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 60vh;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        z-index: 0;
+    }
+    
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+        cursor: pointer;
+    }
+    
+    .swiper-container .swiper-slide1 {
+        position: relative;
+    }
+    /* .swiper-container .suggest {
+    position: absolute;
+    bottom: -50px;
+    display: flex;
+    margin: auto;
+} */
+    /* .swiper-container .suggest img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
+
+.swiper-container .suggest_words p {
+    font-size: 1rem;
+} */
+    /* footer */
+    
+    #footer {
+        width: 100%;
+        padding: 20px 0;
+        background-color: #ccc;
+    }
+    
+    #footer .item_group {
+        text-align: center;
+        color: white;
+    }
+    
+    #footer .icon_groups {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 0;
+    }
+    
+    #footer .footer_phone,
+    .footer_address {
+        padding: 5px;
+    }
+    
+    #footer .footer_phone i,
+    .footer_address i {
+        display: inline-block;
+        transform: translateX(-50%);
+    }
+    
+    #footer .footer_phone span,
+    .footer_address span {
+        font-size: 20px;
+    }
+    
+    #footer p {
+        padding-top: 5px;
+    }
+    /* up_icon */
+    
+    @keyframes up_down {
+        0% {
+            transform: translateY(0%);
+        }
+        33%,
+        66% {
+            transform: translateY(5%);
+        }
+        50% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+    }
+    
+    #up_icon .item_groups img {
+        /* background-image:url(img/琪琪去背.png);
+    height:500px;
+    width:500px; */
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        z-index: 1;
+    }
+    /* RWD part */
+    
+    @media screen and (max-width:1199px) {
+        #bread .bread_words {
+            color: black;
+            padding: 20px 0 50px 20px;
+            font-size: 20px;
+        }
+        #tripimage .image {
+            background-image: url(img/九州_魔女宅急便街道.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: auto;
+            width: 850px;
+            height: 500px;
+            border-radius: 40px;
+            padding: 30px;
+        }
+        #tripmap .item_groups {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #tripmap .item_map iframe {
+            width: 800px;
+            height: 400px;
+            box-shadow: 5px 5px 5px gray;
+        }
+        #triprecommend .item_groups {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #triprecommend .item_group1 {
+            border: 1px solid gray;
+            height: 300px;
+            width: 800px;
+            box-shadow: 3px 3px 3px gray;
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #triprecommend .trip_img1 img {
+            display: inline-block;
+            height: 220px;
+            width: 220px;
+            box-shadow: 1px 1px 1px pink;
+            border: 1px solid pink;
+        }
+        #triprecommend .trip1_contents {
+            padding: 5px;
+            text-align: justify;
+            font-size: 19px;
+        }
+        #triprecommend .item_group2 {
+            border: 1px solid gray;
+            height: 300px;
+            width: 800px;
+            box-shadow: 3px 3px 3px gray;
+            background-color: white;
+            padding: 10px;
+        }
+        #triprecommend .trip_img2 img {
+            display: inline-block;
+            height: 220px;
+            width: 220px;
+            box-shadow: 1px 1px 1px pink;
+            border: 1px solid gray;
+        }
+        #triprecommend .trip2_contents {
+            padding: 5px 5px 5px 5px;
+            text-align: justify;
+            font-size: 19px;
+        }
+    }
+    
+    @media screen and (max-width:1049px) {
+        #nav .icons i {
+            border: 1px solid red;
+            width: 14px;
+            display: flex;
+            color: white;
+            justify-content: space-around;
+            align-items: right;
+        }
+    }
+    
+    @media screen and (max-width:991px) {
+        #banner .image {
+            width: 100%;
+        }
+        #nav .items {
+            display: none;
+        }
+        #nav .icons i {
+            display: none;
+        }
+        .hb {
+            cursor: pointer;
+            border: 2px solid pink;
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            background-color: pink;
+            top: 10px;
+            right: 10px;
+            z-index: 99;
+            display: block;
+            border-radius: 25%;
+            transform: scale(1);
+            transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+        }
+        .nav1 {
+            text-align: center;
+        }
+        #tripimage .image {
+            width: 560px;
+            height: 400px;
+        }
+        #tripmap .item_map iframe {
+            width: 530px;
+            height: 330px;
+        }
+        #triprecommend .item_group1 {
+            height: 300px;
+            width: 600px;
+        }
+        #triprecommend .trip1_contents {
+            font-size: 16px;
+        }
+        /* group2 */
+        #triprecommend .item_group2 {
+            width: 600px;
+        }
+        #triprecommend .trip2_contents {
+            font-size: 16px;
+        }
+    }
+    
+    @media screen and (max-width:767px) {
+        .hb {
+            width: 30px;
+            height: 30px;
+            top: 10px;
+        }
+        .hb span {
+            width: 28px;
+        }
+        #nav img {
+            height: 80px;
+            width: 80px;
+            vertical-align: middle;
+        }
+        #banner .banner_words {
+            width: 200px;
+            height: 80px;
+            color: white;
+            font-size: 20px;
+        }
+        #banner .image {
+            display: none;
+        }
+        #banner_phone {
+            display: block;
+        }
+        #banner_phone img {
+            width: 100%;
+        }
+        #tripimage .image {
+            width: 400px;
+            height: 300px;
+        }
+        #tripmap .item_words .tripwords,
+        #tripmap .trip_address {
+            font-size: 15px;
+            padding: 20px;
+        }
+        #tripmap .item_map iframe {
+            width: 450px;
+            height: 330px;
+        }
+        #triprecommend .item_group1 {
+            height: 300px;
+            width: 400px;
+        }
+        #triprecommend .trip1_contents {
+            font-size: 16px;
+        }
+        /* group2 */
+        #triprecommend .item_group2 {
+            width: 400px;
+        }
+        #triprecommend .trip2_contents {
+            font-size: 16px;
+        }
+        #triprecommend .trip_img1 img {
+            top: -5px;
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            box-shadow: 1px 1px 1px pink;
+            border: 1px solid pink;
+        }
+        #triprecommend .item_group1,
+        #triprecommend .item_group2 {
+            height: 300px;
+            width: 400px;
+            position: relative;
+        }
+        #triprecommend .trip1_link strong,
+        #triprecommend .trip2_link strong {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+        #triprecommend .trip_img2 img {
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            box-shadow: 1px 1px 1px pink;
+            border: 1px solid pink;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 250px;
+            height: 250px;
+            cursor: pointer;
+        }
+        #ig_words h2 {
+            font-size: 35px;
+        }
+        #up_icon .item_groups img {
+            height: 100px;
+            width: 100px;
+        }
+    }
+    
+    @media screen and (max-width:500px) {
+        #nav img {
+            height: 60px;
+            width: 60px;
+            vertical-align: middle;
+        }
+        .hb {
+            width: 30px;
+            height: 30px;
+            top: 10px;
+        }
+        .hb span {
+            width: 28px;
+        }
+        #bread .bread_words {
+            color: black;
+            padding: 40px 0 40px 10px;
+            font-size: 16px;
+        }
+        #tripmap h2 {
+            font-size: 35px;
+        }
+        #tripimage .image {
+            width: 250px;
+            height: 250px;
+        }
+        #tripmap .item_map iframe {
+            width: 300px;
+            height: 300px;
+        }
+        #triprecommend .item_group1 {
+            height: 300px;
+            width: 280px;
+            overflow-y: auto;
+        }
+        #triprecommend .trip_words1 h3 {
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #triprecommend .trip1_contents {
+            transform: translateY(5%);
+        }
+        #triprecommend .trip_words1 h4 {
+            font-size: 16px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #triprecommend .trip1_link strong {
+            transform: translateY(-200%);
+        }
+        #triprecommend .trip_img1 img {
+            transform: translateY(25%);
+        }
+        #triprecommend h2 {
+            font-size: 35px;
+        }
+        #triprecommend .item_group1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #triprecommend .item_group2 {
+            height: 300px;
+            width: 280px;
+            overflow-y: auto;
+        }
+        #triprecommend .trip_words2 h3 {
+            font-size: 20px;
+        }
+        #triprecommend .trip_img2 img {
+            transform: translateY(10%);
+        }
+        #triprecommend .trip2_link strong {
+            transform: translateY(-200%);
+        }
+    }

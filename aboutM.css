@@ -1,0 +1,3142 @@
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "黑體";
+    }
+    
+    body {
+        background-image: url(img/漫畫一.png);
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .container1 {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .item_groups {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        /* border      : 1px solid red; */
+    }
+    /* .wrap{
+    max-width:1920px;
+    margin:auto;
+    min-width:1200px;
+} */
+    /* nav */
+    
+    #nav {
+        width: 100%;
+        /* background-color: rgba(255, 0, 0, 0.3); */
+        margin: 0 auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+    }
+    
+    #nav img {
+        height: 100px;
+        width: 100px;
+        vertical-align: middle;
+    }
+    
+    #nav .items {
+        width: 800px;
+    }
+    
+    #nav .items ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+    
+    #nav .icons i {
+        width: 100px;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #nav .icons i:hover {
+        color: red;
+    }
+    
+    #nav .items strong {
+        font-size: 20px;
+    }
+    
+    #nav .bottom_line1 strong,
+    #nav .bottom_line2 strong,
+    #nav .bottom_line3 strong,
+    #nav .bottom_line4 strong {
+        /* border:2px solid yellow; */
+        padding-bottom: 3px;
+        color: white;
+        text-decoration: none;
+        position: relative;
+    }
+    
+    #nav .bottom_line2 {
+        transform: translateX(10%);
+    }
+    
+    #nav .bottom_line3 {
+        transform: translateX(20%);
+    }
+    
+    #nav .bottom_line1 strong::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: -20%;
+        background-color: white;
+        height: 3px;
+        width: 100%;
+    }
+    
+    #nav .bottom_line2 strong::after,
+    #nav .bottom_line3 strong::after,
+    #nav .bottom_line4 strong::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: -20%;
+        background-color: white;
+        height: 3px;
+        width: 0px;
+        transition: width .5s;
+    }
+    
+    #nav .bottom_line2 a:hover strong::after,
+    #nav .bottom_line3 a:hover strong::after,
+    #nav .bottom_line4 a:hover strong::after {
+        width: 100%;
+    }
+    
+    .hb {
+        cursor: pointer;
+        border: 2px solid pink;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        background-color: pink;
+        top: 10px;
+        right: 10px;
+        z-index: 99;
+        display: none;
+        border-radius: 25%;
+        transform: scale(1);
+        transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+    }
+    
+    .hb span {
+        width: 36px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+        display: block;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        margin: auto;
+        transition: .2s;
+    }
+    
+    .hb span:first-child {
+        transform: translateY(-6px);
+    }
+    
+    .hb span:last-child {
+        transform: translateY(6px);
+    }
+    
+    #menu-control {
+        display: none;
+    }
+    
+    #menu-control:checked~.hb {
+        background-color: pink;
+        border-radius: 50%;
+        transform: scale(1.2);
+    }
+    
+    #menu-control:checked~.hb span:nth-child(2) {
+        display: none;
+    }
+    
+    #menu-control:checked~.hb span:first-child {
+        transform: translateY(0px) rotate(45deg);
+    }
+    
+    #menu-control:checked~.hb span:last-child {
+        transform: translateY(0px) rotate(135deg);
+    }
+    
+    .nav1 {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+        transition: 1s;
+    }
+    
+    .nav1 a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 5px 5px 5px .5;
+        padding: 10px 20px;
+        border-bottom: 1px dotted #666;
+    }
+    
+    #menu-control:checked~.nav1 {
+        max-height: calc(100vh - 60px);
+    }
+    /* banner */
+    
+    #banner .image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        top: -100px;
+        /* z-index         : -1; */
+        /* filter          : blur(5px);  */
+    }
+    
+    #banner .image img {
+        filter: blur(5px);
+    }
+    
+    #banner .banner_words {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        height: 100px;
+        color: white;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: rgba(240, 128, 128, 0.6);
+    }
+    
+    #banner .banner_left {
+        /* border: 2px solid blue; */
+        /* background-color: #000; */
+        max-width: 548px;
+        width: 100%;
+        height: 545px;
+        position: absolute;
+        z-index: 10;
+        right: 10%;
+        bottom: 50%;
+        top: 23%;
+        /* display         : none; */
+    }
+    
+    #banner .north_land {
+        /* border: 1px solid blue; */
+        position: absolute;
+        background-image: url(img/紅色北海道.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        right: 0;
+        top: 18px;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #banner .north_land>p {
+        position: absolute;
+        top: 80px;
+        left: 50px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    
+    #banner .main_land {
+        /* border: 1px solid blue; */
+        position: absolute;
+        background-image: url(img/橘色本州.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        bottom: 16%;
+        right: 25%;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #banner .main_land>p {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        transform: translateX(-100%);
+        transform: translateY(-100%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    
+    #banner .west_land {
+        /* border: 1px solid blue; */
+        position: absolute;
+        background-image: url(img/藍色九州.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        bottom: 3%;
+        left: 0%;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #banner .west_land>p {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    
+    #banner .south_land {
+        /* border:1px solid blue; */
+        position: absolute;
+        background-image: url(img/綠色四國.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 130px;
+        height: 130px;
+        bottom: 5px;
+        left: 18%;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #banner .south_land>p {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    /* #banner .banner_right {
+        border: 10px solid blue;
+        z-index: 10;
+    } */
+    
+    #next_map .banner_left991 {
+        /* border: 2px solid blue; */
+        max-width: 550px;
+        width: 100%;
+        height: 550px;
+        position: relative;
+        z-index: 10;
+        /* right        : 10%;
+        bottom          : 50%; */
+        top: 20%;
+        margin: auto;
+        display: none;
+    }
+    
+    #next_map .north_land991 {
+        /* border:1px solid blue;  */
+        position: absolute;
+        background-image: url(img/紅色北海道.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        right: 15px;
+        top: 15px;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #next_map .north_land991>p {
+        position: absolute;
+        top: 80px;
+        left: 50px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    
+    #next_map .main_land991 {
+        /* border: 1px solid blue; */
+        position: absolute;
+        background-image: url(img/橘色本州.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        bottom: 15%;
+        right: 25%;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #next_map .main_land991>p {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        transform: translateX(-100%);
+        transform: translateY(-100%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    
+    #next_map .west_land991 {
+        /* border:1px solid blue; */
+        position: absolute;
+        background-image: url(img/藍色九州.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        bottom: 0%;
+        left: 0%;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #next_map .west_land991>p {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    
+    #next_map .south_land991 {
+        /* border:1px solid blue; */
+        position: absolute;
+        background-image: url(img/綠色四國.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 130px;
+        height: 130px;
+        bottom: 0;
+        left: 18%;
+        opacity: 1;
+        transition: all 1s;
+    }
+    
+    #next_map .south_land991>p {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        color: white;
+        /* border: 2px solid red; */
+        font-size: 20px;
+    }
+    /* #banner .banner_words {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        height: 100px;
+        color: white;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: rgba(240, 128, 128, 0.6);
+    } */
+    /* countries */
+    
+    #countries {
+        padding-top: 35px;
+    }
+    
+    #countries .countries_title {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    #countries .eat {
+        /* border: 1px solid red; */
+        background-image: url(img/日本_食.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries .eat h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries .walk {
+        background-image: url(img/日本_行.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries .walk h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries .place1 {
+        background-image: url(img/北海道_萬平旅館3.jpg);
+        height: 400px;
+        width: 700px;
+        border-radius: 350px / 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #countries .place1::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries .eatwalk1_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries .place1:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries .place1 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 60px;
+        transform: translateY(200%);
+        cursor: pointer;
+    }
+    
+    #countries .place1:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries .place1 p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /* #countries .place1 img {
+        transform: scale(1);
+        transition: all 0.5s ease-out;
+    }
+    
+    #countries .place1 img:hover {
+        transform: scale(1.2);
+    } */
+    
+    #countries .people_happy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* border     : 5px solid blue; */
+    }
+    /* #countries .eat_walk {
+        border: 5px solid green;
+    } */
+    
+    #countries .people {
+        background-image: url(img/日本_人.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries .people h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries .happy {
+        background-image: url(img/日本_樂.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries .happy h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    /*狸小路*/
+    
+    #countries .eatwalk_img {
+        background-image: url(img/北海道_狸小路_食.jpg);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries .eatwalk_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries .eatwalk_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries .eatwalk_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries .eatwalk_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        cursor: pointer;
+        transform: translateY(300%);
+    }
+    
+    #countries .eatwalk_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries .eatwalk_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /*大通公園*/
+    
+    #countries .peoplehappy_img {
+        background-image: url(img/北海道_大通公園_樂.png);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries .peoplehappy_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries .peoplehappy_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries .peoplehappy_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries .peoplehappy_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        transform: translateY(300%);
+        cursor: pointer;
+    }
+    
+    #countries .peoplehappy_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries .peoplehappy_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /* #countries .eatwalk_img img,
+    #countries .peoplehappy_img img,
+    #countries2 .eatwalk_img img,
+    #countries2 .peoplehappy_img img,
+    #countries3 .eatwalk_img img,
+    #countries3 .peoplehappy_img img,
+    #countries4 .eatwalk_img img,
+    #countries4 .peoplehappy_img img {
+        transform: scale(1);
+        transition: all 0.5s ease-out;
+    }
+    
+    #countries .eatwalk_img:hover img,
+    #countries .peoplehappy_img:hover img,
+    #countries2 .eatwalk_img:hover img,
+    #countries2 .peoplehappy_img:hover img,
+    #countries3 .eatwalk_img:hover img,
+    #countries3 .peoplehappy_img:hover img,
+    #countries4 .eatwalk_img:hover img,
+    #countries4 .peoplehappy_img:hover img {
+        transform: scale(1.2);
+    } */
+    
+    #countries1_words .words {
+        position: relative;
+    }
+    
+    #countries1_words h2 {
+        text-align: center;
+    }
+    
+    #countries1_words .words img {
+        position: absolute;
+        top: 0;
+        right: -40%;
+    }
+    
+    #countries1_words .north_island_items img {
+        position: absolute;
+        top: 5px;
+        right: -30%;
+        top: 15%;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries1_words .words p {
+        color: red;
+        font-weight: bold;
+    }
+    
+    #countries1_words .words h2 {
+        width: 300px;
+        margin: 80px auto;
+        /* border       : 1px solid red; */
+        background-color: white;
+        color: red;
+        border-radius: 50px;
+        box-shadow: 3px 3px 3px red;
+        cursor: pointer;
+    }
+    
+    #countries1_words .words h2:hover {
+        background-color: red;
+        color: white;
+        transition: all 1s;
+        cursor: pointer;
+    }
+    /* countries1_imgs */
+    
+    #countries1_img {
+        margin-top: 100px;
+        display: none;
+    }
+    
+    #countries1_img h2 {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    #countries1_img .countries1_img1 {
+        background-image: url(img/動漫圖片/北海道_風起_動漫.jpg);
+        padding-bottom: 56.25%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        transition: all .3s;
+        position: relative;
+    }
+    
+    .countries1_img1::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    .countries1_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .countries1_img1:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries1_img .countries1_img1 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 80px;
+        transform: translateY(250%);
+    }
+    
+    #countries1_img .countries1_img1:hover p {
+        opacity: 1;
+    }
+    
+    .countries1_img1>div>p {
+        text-align: center;
+        color: white;
+    }
+    /* countries1_words */
+    /* #countries2_words .words {
+ position: relative;
+}
+
+#countries2_words h2{
+    text-align:center;
+}
+
+ #countries2_words .words img{
+     position: absolute;
+     top:0;
+     right:-300px;
+ }
+
+ #countries2_words .words h2{
+     width:300px;
+     margin: 80px auto ;
+     border:1px solid orange;
+     background-color:white;
+     color:orange;
+     border-radius: 50px;
+     box-shadow: 3px 3px 3px orange;
+ }  */
+    /* countries2 */
+    
+    #countries2 {
+        padding-top: 100px;
+    }
+    
+    #countries2 .countries_title {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    #countries2 .eat {
+        background-image: url(img/日本_食.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2 .eat h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries2 .walk {
+        background-image: url(img/日本_行.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2 .walk h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries2 .place2 {
+        background-image: url(img/龍貓售票亭_本州.jpg);
+        height: 400px;
+        width: 700px;
+        border-radius: 350px / 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #countries2 .place2::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries2 .place2_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries2 .place2:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries2 .place2 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 60px;
+        transform: translateY(180%);
+        cursor: pointer;
+    }
+    
+    #countries2 .place2:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries2 .place2 p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #countries2 .people_happy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* border     : 5px solid blue; */
+    }
+    /* #countries2 .eat_walk {
+        border: 5px solid green;
+    } */
+    
+    #countries2 .people {
+        background-image: url(img/日本_人.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2 .people h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries2 .happy {
+        background-image: url(img/日本_樂.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2 .happy h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries2 .eatwalk_img {
+        background-image: url(img/東京晴空塔_本州_樂.png);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2 .eatwalk_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries2 .eatwalk_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries2 .eatwalk_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries2 .eatwalk_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        transform: translateY(280%);
+        cursor: pointer;
+    }
+    
+    #countries2 .eatwalk_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries2 .eatwalk_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #countries2 .peoplehappy_img {
+        background-image: url(img/新世界商店街_本州_食.jpg);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2 .peoplehappy_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries2 .peoplehappy_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries2 .peoplehappy_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries2 .peoplehappy_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        transform: translateY(300%);
+        cursor: pointer;
+    }
+    
+    #countries2 .peoplehappy_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries2 .peoplehappy_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /* countries2_words */
+    
+    #countries2_words .words {
+        position: relative;
+    }
+    
+    #countries2_words h2 {
+        text-align: center;
+    }
+    
+    #countries2_words .words img {
+        position: absolute;
+        top: 0;
+        right: -30%;
+    }
+    
+    #countries2_words .main_island_items img {
+        position: absolute;
+        top: 0;
+        right: -25%;
+        top: 35%;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries2_words .words p {
+        color: orange;
+        font-weight: bold;
+    }
+    
+    #countries2_words .words h2 {
+        width: 300px;
+        margin: 80px auto;
+        border: 1px solid orange;
+        background-color: white;
+        color: orange;
+        border-radius: 50px;
+        box-shadow: 3px 3px 3px orange;
+        cursor: pointer;
+    }
+    
+    #countries2_words .words h2:hover {
+        background-color: orange;
+        color: white;
+        transition: all 1s;
+        cursor: pointer;
+    }
+    /* countries2_imgs */
+    
+    #countries2_img {
+        margin-top: 100px;
+        /* border : 1px solid blue; */
+        display: none;
+    }
+    
+    #countries2_img h2 {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    #countries2_img .countries2_img1 {
+        background-image: url(img/動漫圖片/龍貓_本州_動漫.jpg);
+        max-width: 1200px;
+        /* width           : 100%;
+        height             : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        transition: all .3s;
+        position: relative;
+    }
+    
+    #countries2_img .countries2_img2 {
+        background-image: url(img/動漫圖片/天空之城_本州_動漫.jpg);
+        max-width: 1200px;
+        /* width           : 100%;
+        height             : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        transition: all .3s;
+        position: relative;
+    }
+    
+    #countries2_img .countries2_img3 {
+        background-image: url(img/動漫圖片/堐上的波妞_本州_動漫.jpg);
+        max-width: 1200px;
+        /* width           : 100%;
+        height             : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        transition: all .3s;
+        position: relative;
+    }
+    
+    #countries2_img .countries2_img4 {
+        background-image: url(img/動漫圖片/心之谷_本州_動漫.png);
+        max-width: 1200px;
+        /* width           : 100%;
+        height             : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        transition: all .3s;
+        position: relative;
+    }
+    
+    #countries2_img .countries2_img1::before,
+    #countries2_img .countries2_img2::before,
+    #countries2_img .countries2_img3::before,
+    #countires2_img .countries2_img4::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries2_img .countries2_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries2_img .countries2_img1:hover::before,
+    #countries2_img .countries2_img2:hover::before,
+    #countries2_img .countries2_img3:hover::before,
+    #countries2_img .countries2_img4:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries2_img .countries2_img1 p,
+    #countries2_img .countries2_img2 p,
+    #countries2_img .countries2_img3 p,
+    #countries2_img .countries2_img4 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 80px;
+        transform: translateY(250%);
+    }
+    
+    #countries2_img .countries2_img1:hover p,
+    #countries2_img .countries2_img2:hover p,
+    #countries2_img .countries2_img3:hover p,
+    #countries2_img .countries2_img4:hover p {
+        opacity: 1;
+        z-index: 99;
+    }
+    
+    .countries2_img1>div>p,
+    .countries2_img2>div>p,
+    .countries2_img3>div>p,
+    .countries2_img4>div>p {
+        text-align: center;
+        color: white;
+        z-index: 99;
+    }
+    /* countries3 */
+    
+    #countries3 {
+        padding-top: 100px;
+    }
+    
+    #countries3 .countries_title {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    #countries3 .eat {
+        background-image: url(img/日本_食.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3 .eat h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries3 .walk {
+        background-image: url(img/日本_行.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3 .walk h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries3 .place3 {
+        background-image: url(img/天守閣_神隱少女_樂.png);
+        height: 400px;
+        width: 700px;
+        border-radius: 350px / 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #countries3 .place3::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries3 .place3_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries3 .place3:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries3 .place3 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 60px;
+        transform: translateY(180%);
+        cursor: pointer;
+    }
+    
+    #countries3 .place3:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries3 .place3 p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #countries3 .people_happy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    #countries3 .people {
+        background-image: url(img/日本_人.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3 .people h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries3 .happy {
+        background-image: url(img/日本_樂.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3 .happy h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries3 .eatwalk_img {
+        background-image: url(img/高松商店街_四國_樂.png);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3 .eatwalk_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries3 .eatwalk_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries3 .eatwalk_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries3 .eatwalk_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        transform: translateY(300%);
+        cursor: pointer;
+    }
+    
+    #countries3 .eatwalk_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries3 .eatwalk_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #countries3 .peoplehappy_img {
+        background-image: url(img/四國_小豆島_樂.png);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3 .peoplehappy_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries3 .peoplehappy_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries3 .peoplehappy_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries3 .peoplehappy_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        transform: translateY(300%);
+        cursor: pointer;
+    }
+    
+    #countries3 .peoplehappy_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries3 .peoplehappy_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /*countries3_words */
+    
+    #countries3_words .words {
+        position: relative;
+    }
+    
+    #countries3_words h2 {
+        text-align: center;
+    }
+    
+    #countries3_words .words img {
+        position: absolute;
+        top: 5px;
+        right: -30%;
+    }
+    
+    #countries3_words .south_island_items img {
+        position: absolute;
+        top: 5px;
+        right: -35%;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries3_words .words p {
+        color: green;
+        font-weight: bold;
+    }
+    
+    #countries3_words .words h2 {
+        width: 300px;
+        margin: 80px auto;
+        border: 1px solid green;
+        background-color: white;
+        color: green;
+        border-radius: 50px;
+        box-shadow: 3px 3px 3px green;
+        cursor: pointer;
+    }
+    
+    #countries3_words .words h2:hover {
+        background-color: green;
+        color: white;
+        transition: all 1s;
+        cursor: pointer;
+    }
+    /* countries3_imgs */
+    
+    #countries3_img {
+        margin-top: 100px;
+        display: none;
+    }
+    
+    #countries3_img h2 {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    #countries3_img .countries3_img1 {
+        background-image: url(img/動漫圖片/千尋_四國_動漫.jpg);
+        /* width           : 100%; */
+        max-width: 1200px;
+        /* height          : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+    
+    .countries3_img1::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    .countries3_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .countries3_img1:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries3_img .countries3_img1 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 80px;
+        transform: translateY(250%);
+        cursor: pointer;
+    }
+    
+    #countries3_img .countries3_img1:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .countries3_img1>div>p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /* countries4 */
+    
+    #countries4 {
+        padding-top: 100px;
+    }
+    
+    #countries4 .countries_title {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    #countries4 .eat {
+        background-image: url(img/日本_食.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4 .eat h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries4 .walk {
+        background-image: url(img/日本_行.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4 .walk h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries4 .place4 {
+        background-image: url(img/九州_魔女宅急便街道.png);
+        height: 400px;
+        width: 700px;
+        border-radius: 350px / 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #countries4 .place4::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries4 .place4_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries4 .place4:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries4 .place4 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 60px;
+        transform: translateY(180%);
+        cursor: pointer;
+    }
+    
+    #countries4 .place4:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries4 .place4 p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #countries4 .people_happy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    #countries4 .people {
+        background-image: url(img/日本_人.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4 .people h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries4 .happy {
+        background-image: url(img/日本_樂.jpg);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 100px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4 .happy h3 {
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(50%);
+        right: 50%;
+        color: white;
+    }
+    
+    #countries4 .eatwalk_img {
+        background-image: url(img/太宰府_九州_樂.jpg);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4 .eatwalk_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries4 .eatwalk_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries4 .eatwalk_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries4 .eatwalk_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        cursor: pointer;
+        transform: translateY(300%);
+    }
+    
+    #countries4 .eatwalk_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries4 .eatwalk_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #countries4 .peoplehappy_img {
+        background-image: url(img/島九十九島_九州_樂.jpg.png);
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4 .peoplehappy_img::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #countries4 .peoplehappy_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #countries4 .peoplehappy_img:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries4 .peoplehappy_img p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 20px;
+        transform: translateY(300%);
+        cursor: pointer;
+    }
+    
+    #countries4 .peoplehappy_img:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    #countries4 .peoplehappy_img p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /*countries4_words */
+    
+    #countries4_words .words {
+        position: relative;
+    }
+    
+    #countries4_words h2 {
+        text-align: center;
+    }
+    
+    #countries4_words .words img {
+        position: absolute;
+        top: 5px;
+        right: -30%;
+    }
+    
+    #countries4_words .west_island_items img {
+        position: absolute;
+        top: 10%;
+        right: -25%;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    #countries4_words .words p {
+        color: blue;
+        font-weight: bold;
+    }
+    
+    #countries4_words .words h2 {
+        width: 300px;
+        margin: 80px auto;
+        border: 1px solid blue;
+        background-color: white;
+        color: blue;
+        border-radius: 50px;
+        box-shadow: 3px 3px 3px blue;
+        cursor: pointer;
+    }
+    
+    #countries4_words .words h2:hover {
+        background-color: blue;
+        color: white;
+        transition: all 1s;
+        cursor: pointer;
+    }
+    /* countries4_imgs */
+    
+    #countries4_img {
+        margin: 100px 0;
+        display: none;
+    }
+    
+    #countries4_img h2 {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    #countries4_img .countries4_img1 {
+        background-image: url(img/動漫圖片/魔法公主_九州_動漫.jpg);
+        /* width           : 100%; */
+        max-width: 1200px;
+        /* height          : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+    
+    #countries4_img .countries4_img2 {
+        background-image: url(img/動漫圖片/魔女宅急便_九州_動漫.jpg);
+        /* width           : 100%; */
+        max-width: 1200px;
+        /* height          : 550px; */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-top: 100px;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+    
+    .countries4_img1::before,
+    .countries4_img2::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    .countries4_color {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .countries4_img1:hover::before,
+    .countries4_img2:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    
+    #countries4_img .countries4_img1 p,
+    #countries4_img .countries4_img2 p {
+        opacity: 0;
+        transition: all 1s;
+        font-size: 80px;
+        transform: translateY(250%);
+        cursor: pointer;
+    }
+    
+    #countries4_img .countries4_img1:hover p,
+    #countries4_img .countries4_img2:hover p {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .countries4_img1>div>p,
+    .countries4_img2>div>p {
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /* footer */
+    
+    #footer {
+        width: 100%;
+        background-color: #ccc;
+        margin: auto;
+    }
+    /* #footer .container{
+    border:2px solid blue;
+} */
+    
+    #footer .item_group {
+        text-align: center;
+        color: white;
+    }
+    
+    #footer .icon_groups {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 0;
+    }
+    
+    #footer .footer_phone,
+    .footer_address {
+        padding: 5px;
+    }
+    
+    #footer .footer_phone i,
+    .footer_address i {
+        display: inline-block;
+        transform: translateX(-50%);
+    }
+    
+    #footer .footer_phone span,
+    .footer_address span {
+        font-size: 20px;
+    }
+    
+    #footer p {
+        padding-top: 5px;
+    }
+    /* up_icon */
+    
+    @keyframes up_down {
+        0% {
+            transform: translateY(0%);
+        }
+        33%,
+        66% {
+            transform: translateY(5%);
+        }
+        50% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+    }
+    
+    #up_icon .item_groups img {
+        /* background-image:url(img/琪琪去背.png);
+    height:500px;
+    width:500px; */
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        animation-name: up_down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    
+    @media screen and (max-width:1120px) {
+        #countries .eatwalk_img p,
+        #countries .peoplehappy_img p,
+        #countries2 .peoplehappy_img p,
+        #countries3 .eatwalk_img p,
+        #countries3 .peoplehappy_img p,
+        #countries4 .eatwalk_img p,
+        #countries4 .peoplehappy_img p {
+            transform: translateY(250%);
+        }
+        #countries2 .eatwalk_img p {
+            transform: translateY(200%);
+        }
+        #countries .place1,
+        #countries2 .place2,
+        #countries3 .place3,
+        #countries4 .place4 {
+            height: 400px;
+            width: 500px;
+            border-radius: 250px / 200px;
+        }
+        #countries .eatwalk_img,
+        #countries .peoplehappy_img,
+        #countries2 .eatwalk_img,
+        #countries2 .peoplehappy_img,
+        #countries3 .eatwalk_img,
+        #countries3 .peoplehappy_img,
+        #countries4 .eatwalk_img,
+        #countries4 .peoplehappy_img {
+            height: 150px;
+            width: 150px;
+        }
+        #countries1_words .words img {
+            position: absolute;
+            top: 0;
+            right: -28%;
+            width: 160px;
+            height: 160px;
+        }
+        @media screen and (max-width:1050px) {
+            #nav .icons i {
+                width: 20px;
+                display: flex;
+                color: white;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .container1 {
+                max-width: 500px;
+                width: 100%;
+                margin: auto;
+            }
+            #countries1_words .words img {
+                right: -35%;
+            }
+            #countries1_words .north_island_itmes img {
+                position: absolute;
+                top: 0;
+                right: -20%;
+                width: 160px;
+                height: 160px;
+            }
+        }
+        @media screen and (max-width:991px) {
+            .container1 {
+                max-width: 450px;
+                width: 100%;
+                margin: auto;
+            }
+            #banner .image {
+                height: auto;
+            }
+            #nav .icons i {
+                display: none;
+            }
+            #nav .items ul {
+                display: none;
+            }
+            #nav .items {
+                width: 80%;
+            }
+            .hb {
+                cursor: pointer;
+                border: 2px solid pink;
+                width: 40px;
+                height: 40px;
+                position: fixed;
+                background-color: pink;
+                top: 10px;
+                right: 10px;
+                z-index: 99;
+                display: block;
+                border-radius: 25%;
+                transform: scale(1);
+                transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+            }
+            .nav1 {
+                text-align: center;
+            }
+            #banner .banner_words {
+                width: 250px;
+                height: 80px;
+                color: white;
+                font-size: 20px;
+            }
+            #banner .banner_words {
+                display: none;
+            }
+            #banner .image img {
+                filter: blur(0px);
+            }
+            #banner .banner_left {
+                display: none;
+            }
+            #next_map .banner_left991 {
+                display: block;
+            }
+            #countries1_img .countries1_img1 p {
+                transform: translateY(200%);
+            }
+            #countries2_img .countries2_img1 p,
+            #countries2_img .countries2_img2 p,
+            #countries2_img .countries2_img3 p,
+            #countries2_img .countries2_img4 p {
+                transform: translateY(200%);
+            }
+            #countries3_img .countries3_img1 p {
+                transform: translateY(200%);
+            }
+            #countries4_img .countries4_img1 p,
+            #countries4_img .countries4_img2 p {
+                transform: translateY(200%);
+            }
+            #countries1_words .words img {
+                width: 130px;
+                height: 130px;
+                right: -40%;
+            }
+            #countries1_words .north_island_itmes img {
+                position: absolute;
+                top: 0;
+                right: -30%;
+                width: 130px;
+                height: 130px;
+            }
+            #countries2_words .main_island_items img {
+                width: 80px;
+                height: 80px;
+                right: -30%;
+            }
+            #countries2_words .words img {
+                width: 180px;
+                height: 180px;
+                right: -30%;
+            }
+            #countries3_words .words img {
+                position: absolute;
+                top: 5px;
+                right: -30%;
+                height: 130px;
+                width: 130px;
+            }
+            #countries3_words .south_island_items img {
+                position: absolute;
+                top: 5px;
+                right: -28%;
+            }
+            #countries4_words .words img {
+                position: absolute;
+                top: 5px;
+                right: -30%;
+                width: 120px;
+                height: 150px;
+            }
+            #countries4_words .west_island_items img {
+                position: absolute;
+                top: 10%;
+                right: -30%;
+                width: 80px;
+                height: 80px;
+            }
+            #countries .place1,
+            #countries2 .place2,
+            #countries3 .place3,
+            #countries4 .place4 {
+                height: 330px;
+                width: 430px;
+                border-radius: 215px / 165px;
+            }
+            #countries .place1 p {
+                font-size: 40px;
+                transform: translateY(250%);
+            }
+            #countries2 .place2 p {
+                font-size: 40px;
+                transform: translateY(230%);
+            }
+            #countries3 .place3 p {
+                font-size: 40px;
+                transform: translateY(250%);
+            }
+            #countries4 .place4 p {
+                font-size: 40px;
+                transform: translateY(250%);
+            }
+        }
+        @media screen and (max-width:880px) {
+            #countries1_words .words img {
+                width: 130px;
+                height: 130px;
+                right: -32%;
+            }
+            #countries1_words .north_island_items img {
+                position: absolute;
+                top: 0;
+                right: -32%;
+                width: 130px;
+                height: 130px;
+            }
+            #up_icon .item_groups img {
+                height: 130px;
+                width: 130px;
+            }
+        }
+        @media screen and (max-width:767px) {
+            #nav img {
+                height: 80px;
+                width: 80px;
+            }
+            .hb {
+                width: 30px;
+                height: 30px;
+            }
+            .hb span {
+                width: 27px;
+            }
+            #countries1_words img,
+            #countries1_words .north_island_itmes img,
+            #countries2_words .words img,
+            #countries2_words .main_island_items img,
+            #countries3_words .words img,
+            #countries3_words .south_island_items img,
+            #countries4_words .words img,
+            #countries4_words .west_island_items img,
+            #countries .eatwalk_img,
+            #countries .peoplehappy_img,
+            #countries2 .eatwalk_img,
+            #countries2 .peoplehappy_img,
+            #countries3 .eatwalk_img,
+            #countries3 .peoplehappy_img,
+            #countries4 .eatwalk_img,
+            #countries4 .peoplehappy_img {
+                display: none;
+            }
+            #nav .items {
+                width: 75%;
+            }
+            #countries1_img .countries1_img1 p {
+                transform: translateY(150%);
+            }
+            #countries2_img .countries2_img1 p,
+            #countries2_img .countries2_img2 p,
+            #countries2_img .countries2_img3 p,
+            #countries2_img .countries2_img4 p {
+                transform: translateY(150%);
+            }
+            #countries3_img .countries3_img1 p {
+                transform: translateY(150%);
+            }
+            #countries4_img .countries4_img1 p,
+            #countries4_img .countries4_img2 p {
+                transform: translateY(150%);
+            }
+            /* 新增 */
+            .item_groups.circle {
+                flex-direction: column;
+            }
+            #countries .eat_walk,
+            #countries .people_happy {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                -ms-align-items: center;
+                align-items: center;
+                width: 100%;
+            }
+            #countries .people,
+            #countries .happy {
+                margin-bottom: 60px;
+                margin-top: 10px;
+            }
+            #countries .eat,
+            #countries .walk {
+                margin-bottom: 10px;
+            }
+            /* 2 */
+            #countries2 .eat_walk,
+            #countries2 .people_happy {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                -ms-align-items: center;
+                align-items: center;
+                width: 100%;
+            }
+            #countries2 .people,
+            #countries2 .happy {
+                margin-bottom: 60px;
+                margin-top: 10px;
+            }
+            #countries2 .eat,
+            #countries2 .walk {
+                margin-bottom: 10px;
+            }
+            /* 3 */
+            #countries3 .eat_walk,
+            #countries3 .people_happy {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                -ms-align-items: center;
+                align-items: center;
+                width: 100%;
+            }
+            #countries3 .people,
+            #countries3 .happy {
+                margin-bottom: 60px;
+                margin-top: 10px;
+            }
+            #countries3 .eat,
+            #countries3 .walk {
+                margin-bottom: 10px;
+            }
+            /* 4 */
+            #countries4 .eat_walk,
+            #countries4 .people_happy {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                -ms-align-items: center;
+                align-items: center;
+                width: 100%;
+            }
+            #countries4 .people,
+            #countries4 .happy {
+                margin-bottom: 60px;
+                margin-top: 10px;
+            }
+            #countries4 .eat,
+            #countries4 .walk {
+                margin-bottom: 10px;
+            }
+            .container1 {
+                max-width: 300px;
+                width: 100%;
+                margin: auto;
+            }
+        }
+        @media screen and (max-width:576px) {
+            #countries1_img .countries1_img1 p {
+                transform: translateY(130%);
+                font-size: 50px;
+            }
+            #countries2_img .countries2_img1 p,
+            #countries2_img .countries2_img2 p,
+            #countries2_img .countries2_img3 p,
+            #countries2_img .countries2_img4 p {
+                font-size: 50px;
+                transform: translateY(130%);
+            }
+            #countries4_img .countries4_img1 p,
+            #countries4_img .countries4_img2 p {
+                font-size: 50px;
+                transform: translateY(130%);
+            }
+            #countries3_img .countries3_img1 p {
+                font-size: 50px;
+                transform: translateY(130%);
+            }
+            #next_map .banner_left991 {
+                /* border: 2px solid blue; */
+                max-width: 450px;
+                width: 100%;
+                height: 450px;
+                position: relative;
+                z-index: 10;
+                /* right        : 10%;
+                bottom          : 50%; */
+                top: 20%;
+                margin: auto;
+            }
+            #next_map .north_land991 {
+                /* border:1px solid blue;  */
+                position: absolute;
+                background-image: url(img/紅色北海道.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 120px;
+                right: 0;
+                top: 0;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .north_land991>p {
+                position: absolute;
+                top: 50px;
+                left: 40px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .main_land991 {
+                /* border: 1px solid blue; */
+                position: absolute;
+                background-image: url(img/橘色本州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 250px;
+                height: 250px;
+                bottom: 18%;
+                right: 20%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .main_land991>p {
+                position: absolute;
+                top: 160px;
+                left: 160px;
+                transform: translateX(-100%);
+                transform: translateY(-100%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .west_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/藍色九州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 130px;
+                height: 130px;
+                bottom: 0%;
+                left: 0%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .west_land991>p {
+                position: absolute;
+                top: 40px;
+                left: 50px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .south_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/綠色四國.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100px;
+                height: 100px;
+                bottom: 5%;
+                left: 22%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .south_land991>p {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+        }
+        @media screen and (max-width:500px) {
+            #nav img {
+                height: 60px;
+                width: 60px;
+            }
+            .hb {
+                width: 30px;
+                height: 30px;
+            }
+            .hb span {
+                width: 27px;
+            }
+            /* #countries1_img .countries1_img1 p {
+                transform: translateY(150%);
+                font-size: 50px;
+            }
+            #countries2_img .countries2_img1 p,
+            #countries2_img .countries2_img2 p,
+            #countries2_img .countries2_img3 p,
+            #countries2_img .countries2_img4 p {
+                font-size: 50px;
+                transform: translateY(150%);
+            }
+            #countries4_img .countries4_img1 p,
+            #countries4_img .countries4_img2 p {
+                font-size: 50px;
+                transform: translateY(150%);
+            }
+            #countries3_img .countries3_img1 p {
+                font-size: 50px;
+                transform: translateY(150%);
+            } */
+            #countries1_img .countries1_img1 p {
+                transform: translateY(200%);
+                font-size: 40px;
+            }
+            #countries2_img .countries2_img1 p,
+            #countries2_img .countries2_img2 p,
+            #countries2_img .countries2_img3 p,
+            #countries2_img .countries2_img4 p {
+                font-size: 40px;
+                transform: translateY(200%);
+            }
+            #countries3_img .countries3_img1 p {
+                font-size: 40px;
+                transform: translateY(200%);
+            }
+            #countries4_img .countries4_img1 p,
+            #countries4_img .countries4_img2 p {
+                font-size: 40px;
+                transform: translateY(200%);
+            }
+            #countries .place1,
+            #countries2 .place2,
+            #countries3 .place3,
+            #countries4 .place4 {
+                height: 200px;
+                width: 300px;
+                border-radius: 150px / 100px;
+            }
+            #countries .countries_title strong {
+                font-size: 30px;
+            }
+            #countries1_img h2 {
+                font-size: 30px;
+            }
+            #countries2_img h2,
+            #countries3_img h2,
+            #countries4_img h2 {
+                font-size: 30px;
+            }
+            #countries .place1 p {
+                font-size: 20px;
+                transform: translateY(300%);
+            }
+            #countries2 .place2 p {
+                font-size: 20px;
+                transform: translateY(250%);
+            }
+            #countries3 .place3 p {
+                font-size: 20px;
+                transform: translateY(300%);
+            }
+            #countries4 .place4 p {
+                font-size: 20px;
+                transform: translateY(300%);
+            }
+            #countries4 .walk,
+            #countries4 .happy {
+                margin-left: 80px;
+            }
+            #footer .footer_phone,
+            .footer_address {
+                padding: 5px;
+                font-size: 16px;
+            }
+            #footer .footer_phone i,
+            .footer_address i {
+                display: inline-block;
+                transform: translateX(-50%);
+                font-size: 16px;
+            }
+            #footer .footer_phone span,
+            .footer_address span {
+                font-size: 16px;
+            }
+            #next_map .banner_left991 {
+                /* border: 2px solid blue; */
+                max-width: 450px;
+                width: 100%;
+                height: 450px;
+                position: relative;
+                z-index: 10;
+                /* right        : 10%;
+                bottom          : 50%; */
+                top: 20%;
+                margin: auto;
+            }
+            #next_map .north_land991 {
+                /* border:1px solid blue;  */
+                position: absolute;
+                background-image: url(img/紅色北海道.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 120px;
+                right: 0;
+                top: 0;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .north_land991>p {
+                position: absolute;
+                top: 50px;
+                left: 40px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .main_land991 {
+                /* border: 1px solid blue; */
+                position: absolute;
+                background-image: url(img/橘色本州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 250px;
+                height: 250px;
+                bottom: 18%;
+                right: 20%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .main_land991>p {
+                position: absolute;
+                top: 160px;
+                left: 160px;
+                transform: translateX(-100%);
+                transform: translateY(-100%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .west_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/藍色九州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 130px;
+                height: 130px;
+                bottom: 0%;
+                left: 0%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .west_land991>p {
+                position: absolute;
+                top: 40px;
+                left: 50px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .south_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/綠色四國.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100px;
+                height: 100px;
+                bottom: 5%;
+                left: 22%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .south_land991>p {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+        }
+        @media screen and (max-width:440px) {
+            #next_map .north_land991 {
+                /* border:1px solid blue;  */
+                position: absolute;
+                background-image: url(img/紅色北海道.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100px;
+                height: 100px;
+                right: 15px;
+                top: 15px;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .main_land991 {
+                /* border: 1px solid blue; */
+                position: absolute;
+                background-image: url(img/橘色本州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 200px;
+                bottom: 30%;
+                right: 25%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .west_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/藍色九州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 80px;
+                height: 80px;
+                bottom: 18%;
+                left: 10%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .south_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/綠色四國.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 80px;
+                height: 80px;
+                bottom: 20%;
+                left: 25%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .north_land991>p {
+                position: absolute;
+                top: 40px;
+                left: 30px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .main_land991>p {
+                position: absolute;
+                top: 120px;
+                left: 120px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .west_land991>p {
+                position: absolute;
+                top: 30px;
+                left: 20px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .south_land991>p {
+                position: absolute;
+                top: 25px;
+                left: 30px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #countries1_img .countries1_img1 p {
+                transform: translateY(150%);
+                font-size: 40px;
+            }
+            #countries2_img .countries2_img1 p,
+            #countries2_img .countries2_img2 p,
+            #countries2_img .countries2_img3 p,
+            #countries2_img .countries2_img4 p {
+                font-size: 40px;
+                transform: translateY(150%);
+            }
+            #countries3_img .countries3_img1 p {
+                font-size: 40px;
+                transform: translateY(150%);
+            }
+            #countries4_img .countries4_img1 p,
+            #countries4_img .countries4_img2 p {
+                font-size: 40px;
+                transform: translateY(150%);
+            }
+        }
+        @media screen and (max-width:400px) {
+            #next_map .north_land991 {
+                /* border:1px solid blue;  */
+                position: absolute;
+                background-image: url(img/紅色北海道.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100px;
+                height: 100px;
+                right: 15px;
+                top: 15px;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .main_land991 {
+                /* border: 1px solid blue; */
+                position: absolute;
+                background-image: url(img/橘色本州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 200px;
+                bottom: 30%;
+                right: 25%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .west_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/藍色九州.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 80px;
+                height: 80px;
+                bottom: 18%;
+                left: 0%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .south_land991 {
+                /* border:1px solid blue; */
+                position: absolute;
+                background-image: url(img/綠色四國.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 68px;
+                height: 68px;
+                bottom: 20%;
+                left: 18%;
+                opacity: 1;
+                transition: all 1s;
+            }
+            #next_map .north_land991>p {
+                position: absolute;
+                top: 40px;
+                left: 30px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .main_land991>p {
+                position: absolute;
+                top: 120px;
+                left: 120px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .west_land991>p {
+                position: absolute;
+                top: 30px;
+                left: 20px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+            #next_map .south_land991>p {
+                position: absolute;
+                top: 20px;
+                left: 28px;
+                transform: translateX(-50%);
+                transform: translateY(-50%);
+                color: white;
+                /* border: 2px solid red; */
+                font-size: 16px;
+            }
+        }
+    }

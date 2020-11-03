@@ -1,0 +1,1763 @@
+                                * {
+                                    padding: 0;
+                                    margin: 0;
+                                    list-style: none;
+                                    text-decoration: none;
+                                    font-family: "黑體";
+                                }
+                                
+                                .container {
+                                    max-width: 1200px;
+                                    width: 100%;
+                                    margin: 0 auto;
+                                    /* min-width:1200px; */
+                                }
+                                
+                                .item_groups {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                }
+                                /* nav */
+                                
+                                #nav {
+                                    width: 100%;
+                                    /* min-width       : 1200px; */
+                                    /* background-color: rgba(255, 0, 0, 0.3); */
+                                    margin: 0 auto;
+                                    position: sticky;
+                                    /* position        : fixed; */
+                                    top: 0;
+                                    /* left            : 0; */
+                                    /* right           : 0; */
+                                    z-index: 3;
+                                    background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                    background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                }
+                                
+                                #nav img {
+                                    height: 100px;
+                                    width: 100px;
+                                    vertical-align: middle;
+                                }
+                                
+                                #nav .items {
+                                    width: 800px;
+                                }
+                                
+                                #nav .items ul {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    color: white;
+                                }
+                                
+                                #nav .icons i {
+                                    width: 100px;
+                                    display: flex;
+                                    color: white;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                }
+                                
+                                #nav .icons i:hover {
+                                    color: red;
+                                }
+                                
+                                #nav .items strong {
+                                    font-size: 20px;
+                                }
+                                
+                                #nav .bottom_line1 strong,
+                                #nav .bottom_line2 strong,
+                                #nav .bottom_line3 strong,
+                                #nav .bottom_line4 strong {
+                                    /* border:2px solid yellow; */
+                                    padding-bottom: 3px;
+                                    color: white;
+                                    text-decoration: none;
+                                    position: relative;
+                                }
+                                
+                                #nav .bottom_line2 {
+                                    transform: translateX(10%);
+                                }
+                                
+                                #nav .bottom_line3 {
+                                    transform: translateX(20%);
+                                }
+                                
+                                #nav .bottom_line3 strong::after {
+                                    content: "";
+                                    position: absolute;
+                                    display: block;
+                                    left: 0;
+                                    bottom: -20%;
+                                    background-color: white;
+                                    height: 3px;
+                                    width: 100%;
+                                }
+                                
+                                #nav .bottom_line1 strong::after,
+                                #nav .bottom_line2 strong::after,
+                                #nav .bottom_line4 strong::after {
+                                    content: "";
+                                    position: absolute;
+                                    display: block;
+                                    left: 0;
+                                    bottom: -20%;
+                                    background-color: white;
+                                    height: 3px;
+                                    width: 0px;
+                                    transition: width .5s;
+                                }
+                                
+                                #nav .bottom_line1 a:hover strong::after,
+                                #nav .bottom_line2 a:hover strong::after,
+                                #nav .bottom_line4 a:hover strong::after {
+                                    width: 100%;
+                                }
+                                
+                                .hb {
+                                    cursor: pointer;
+                                    border: 2px solid pink;
+                                    width: 40px;
+                                    height: 40px;
+                                    position: fixed;
+                                    background-color: pink;
+                                    top: 10px;
+                                    right: 10px;
+                                    z-index: 99;
+                                    display: none;
+                                    border-radius: 25%;
+                                    transform: scale(1);
+                                    transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+                                }
+                                
+                                .hb span {
+                                    width: 36px;
+                                    height: 5px;
+                                    border-radius: 5px;
+                                    background-color: #fff;
+                                    display: block;
+                                    top: 0;
+                                    right: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    position: absolute;
+                                    margin: auto;
+                                    transition: .2s;
+                                }
+                                
+                                .hb span:first-child {
+                                    transform: translateY(-6px);
+                                }
+                                
+                                .hb span:last-child {
+                                    transform: translateY(6px);
+                                }
+                                
+                                #menu-control {
+                                    display: none;
+                                }
+                                
+                                #menu-control:checked~.hb {
+                                    background-color: pink;
+                                    border-radius: 50%;
+                                    transform: scale(1.2);
+                                }
+                                
+                                #menu-control:checked~.hb span:nth-child(2) {
+                                    display: none;
+                                }
+                                
+                                #menu-control:checked~.hb span:first-child {
+                                    transform: translateY(0px) rotate(45deg);
+                                }
+                                
+                                #menu-control:checked~.hb span:last-child {
+                                    transform: translateY(0px) rotate(135deg);
+                                }
+                                
+                                .nav1 {
+                                    width: 100%;
+                                    max-height: 0;
+                                    overflow: hidden;
+                                    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                                    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                                    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                                    background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                                    transition: 1s;
+                                }
+                                
+                                .nav1 a {
+                                    display: block;
+                                    text-decoration: none;
+                                    color: white;
+                                    padding: 10px 20px;
+                                    border-bottom: 1px dotted #666;
+                                    font-size: 20px;
+                                }
+                                
+                                #menu-control:checked~.nav1 {
+                                    max-height: calc(100vh - 60px);
+                                }
+                                /* banner */
+                                
+                                #banner .image {
+                                    background-image: url(img/旅遊部落客2.jpg);
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    background-position: center;
+                                    width: 100%;
+                                    height: 100vh;
+                                    overflow: hidden;
+                                    position: relative;
+                                    top: -100px;
+                                    z-index: -1;
+                                }
+                                
+                                #banner_shop {
+                                    display: none;
+                                }
+                                
+                                #banner .banner_words {
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 300px;
+                                    height: 100px;
+                                    color: white;
+                                    font-size: 23px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-radius: 10px;
+                                    background-color: rgba(240, 128, 128, 0.6);
+                                }
+                                /* Swiper */
+                                
+                                html,
+                                body {
+                                    position: relative;
+                                    /* height: 100%; */
+                                }
+                                
+                                body {
+                                    background: #eee;
+                                    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                                    font-size: 14px;
+                                    color: #000;
+                                    margin: 0;
+                                    padding: 0;
+                                    background-image: url(img/漫畫一.png);
+                                }
+                                
+                                .swiper-container {
+                                    width: 100%;
+                                    height: 100vh;
+                                }
+                                
+                                .swiper-container {
+                                    position: relative;
+                                }
+                                
+                                .swiper-container .banner_words {
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 500px;
+                                    height: 100px;
+                                    color: white;
+                                    font-size: 25px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-radius: 10px;
+                                    background-color: rgba(250, 123, 193, 0.6);
+                                    z-index: 2;
+                                }
+                                
+                                .swiper-slide {
+                                    text-align: center;
+                                    font-size: 18px;
+                                    background: #fff;
+                                    /* Center slide text vertically */
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    -webkit-align-items: center;
+                                    align-items: center;
+                                    /* z-index             : 0; */
+                                }
+                                
+                                .swiper-container .swiper-slide img {
+                                    width: 100%;
+                                    height: 100vh;
+                                    z-index: 0;
+                                }
+                                /* bread */
+                                
+                                #bread .bread_words p {
+                                    color: black;
+                                    padding: 60px 0 50px 0;
+                                    font-size: 16px;
+                                }
+                                
+                                #bread .bread_words span {
+                                    background-color: lightgreen;
+                                }
+                                /* date */
+                                
+                                #date .item_groups p {
+                                    padding: 90px 0;
+                                    font-size: 20px;
+                                }
+                                /* aboutcontent1 */
+                                
+                                #aboutcontent1 .aboutgroups h2 {
+                                    font-size: 35px;
+                                }
+                                
+                                #aboutcontent1 .aboutgroups p {
+                                    padding-bottom: 90px;
+                                    font-size: 20px;
+                                }
+                                
+                                #aboutcontent1 .aboutcontent_img1 {
+                                    padding-bottom: 90px;
+                                }
+                                
+                                #aboutcontent1 .aboutcontent_img1 img {
+                                    display: block;
+                                    margin: auto;
+                                    height: 650px;
+                                    width: 1050px;
+                                    margin: 0 auto;
+                                }
+                                /* aboutcontent2 */
+                                
+                                #aboutcontent2 .aboutgroups2 p {
+                                    padding-bottom: 90px;
+                                    font-size: 20px;
+                                }
+                                
+                                #aboutcontent2 .aboutcontent_img2 img {
+                                    display: block;
+                                    margin: 0 auto;
+                                    height: 650px;
+                                    width: 1050px;
+                                    padding-bottom: 90px;
+                                }
+                                /* aboutcontent3 */
+                                
+                                #aboutcontent3 .aboutgroups3 h2 {
+                                    font-size: 35px;
+                                }
+                                
+                                #aboutcontent3 .aboutgroups3 p {
+                                    padding-bottom: 90px;
+                                    font-size: 20px;
+                                }
+                                
+                                #aboutcontent3 .aboutcontent_img3 img {
+                                    padding: 20px 0;
+                                    display: block;
+                                    margin: 0 auto;
+                                    height: 650px;
+                                    width: 1050px;
+                                }
+                                /* aboutcontent4 */
+                                
+                                #aboutcontent4 .aboutgroups4 h2 {
+                                    font-size: 35px;
+                                    padding-top: 90px;
+                                }
+                                
+                                #aboutcontent4 .aboutcontent_img4 img {
+                                    display: block;
+                                    margin: 0 auto;
+                                    height: 650px;
+                                    width: 1050px;
+                                    padding: 90px 0;
+                                }
+                                
+                                #aboutcontent4 .aboutgroups4 p {
+                                    font-size: 20px;
+                                }
+                                /* aboutcontent5 */
+                                
+                                #aboutcontent5 .aboutgroups5 h2 {
+                                    font-size: 35px;
+                                    padding-top: 90px;
+                                }
+                                
+                                #aboutcontent5 .aboutgroups5 p {
+                                    font-size: 20px;
+                                }
+                                
+                                #aboutcontent5 .aboutcontent_img5 img {
+                                    display: block;
+                                    margin: 0 auto;
+                                    height: 650px;
+                                    width: 1050px;
+                                    padding: 90px 0;
+                                }
+                                /* aboutcontent6 */
+                                
+                                #aboutcontent6 .aboutgroups6 p {
+                                    padding-bottom: 90px;
+                                    font-size: 20px;
+                                }
+                                
+                                #aboutcontent6 .aboutcontent_img6 img {
+                                    display: block;
+                                    margin: 0 auto;
+                                    height: 650px;
+                                    width: 1050px;
+                                    padding: 35px;
+                                }
+                                /* about_address   */
+                                
+                                #about_address h2 {
+                                    font-size: 35px;
+                                    padding-bottom: 10px;
+                                }
+                                
+                                #about_address .address p {
+                                    padding-top: 10px;
+                                    font-size: 20px;
+                                }
+                                
+                                #about_address .other_trips {
+                                    padding-top: 35px;
+                                }
+                                
+                                #about_address .other_trips strong {
+                                    border: 1px solid green;
+                                    box-shadow: 2px 2px 2px green;
+                                    border-radius: 35px;
+                                    padding: 10px;
+                                    color: green;
+                                }
+                                
+                                #about_address .other_trips strong:hover {
+                                    color: white;
+                                    background-color: green;
+                                    transition: all 1s;
+                                }
+                                /* personal */
+                                
+                                #personal {
+                                    padding: 100px 0;
+                                }
+                                
+                                #personal .personal_words {
+                                    font-size: 16px;
+                                }
+                                
+                                #personal .item_group {
+                                    display: flex;
+                                    justify-content: space-around;
+                                    border: 2px solid lightgreen;
+                                    background-color: white;
+                                    box-shadow: 3px 3px 3px lightgreen;
+                                    padding: 35px;
+                                    border-radius: 40px;
+                                }
+                                
+                                #personal .personal_img img {
+                                    border-radius: 50%;
+                                    height: 150px;
+                                    width: 150px;
+                                    box-shadow: 5px 5px 5px lightgreen;
+                                    margin: 15px;
+                                }
+                                
+                                #personal .personal_name {
+                                    font-size: 35px;
+                                }
+                                
+                                #personal .personal_info {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                }
+                                
+                                #personal .personal_other strong {
+                                    border: 1px solid green;
+                                    color: green;
+                                    background-color: white;
+                                    box-shadow: 3px 3px 3px green;
+                                    border-radius: 35px;
+                                    padding: 10px;
+                                }
+                                
+                                #personal .personal_other strong:hover {
+                                    color: white;
+                                    background-color: green;
+                                    transition: all 1s;
+                                }
+                                /* recommend */
+                                
+                                #recommend {
+                                    padding: 100px 0;
+                                    /* border: 1px solid blue; */
+                                    width: 100%;
+                                }
+                                
+                                #recommend .suggest_img {
+                                    padding: 5px;
+                                }
+                                /* #recommend > div.container {
+    border: 1px solid red; 
+} */
+                                /* @media screen and (max-width: 1200px){
+    #recommend > div.container {
+        width: 100%;
+    }
+} */
+                                
+                                #recommend h2 {
+                                    font-size: 50px;
+                                    text-align: center;
+                                    padding-bottom: 60px;
+                                }
+                                
+                                #recommend .item_groups {
+                                    margin: 0 auto;
+                                    padding: 20px;
+                                    /* outline: 1px solid red; */
+                                }
+                                
+                                #recommend .item1,
+                                .item2,
+                                .item3 {
+                                    font-size: 0;
+                                    border-radius: 10px;
+                                }
+                                
+                                #recommend .re img {
+                                    display: inline-block;
+                                    height: 250px;
+                                    width: 300px;
+                                    z-index: 0;
+                                }
+                                
+                                #recommend .suggest {
+                                    display: flex;
+                                    margin: auto;
+                                    width: 300px;
+                                    height: 100px;
+                                    background-color: rgba(255, 255, 255, 0.8);
+                                    justify-content: space-between;
+                                }
+                                
+                                #recommend .suggest img {
+                                    display: inline-block;
+                                    border-radius: 50%;
+                                    height: 60px;
+                                    width: 60px;
+                                    transform: translateY(40%);
+                                    padding-left: 4px;
+                                }
+                                
+                                #recommend .suggest_words {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                    padding: 4px;
+                                }
+                                
+                                #recommend .suggest_words p {
+                                    font-size: 1rem;
+                                    padding-left: 20px;
+                                    text-align: justify;
+                                }
+                                
+                                #recommend .re_date {
+                                    font-size: 13px;
+                                    color: gray;
+                                }
+                                
+                                #recommend .re_content1,
+                                #recommend .re_content2,
+                                #recommend .re_content3 {
+                                    color: orange;
+                                    height: 50px;
+                                    overflow-y: auto;
+                                }
+                                
+                                #recommend .re_content1::-webkit-scrollbar {
+                                    background: transparent;
+                                }
+                                
+                                #recommend .re_content2::-webkit-scrollbar {
+                                    background: transparent;
+                                }
+                                
+                                #recommend .re_content3::-webkit-scrollbar {
+                                    background: transparent;
+                                }
+                                
+                                #recommend .re_address1 strong,
+                                .re_address2 strong,
+                                .re_address3 strong {
+                                    font-size: 13px;
+                                }
+                                
+                                #recommend .re_address1,
+                                .re_address2,
+                                .re_address3 {
+                                    color: orange;
+                                    font-size: 13px;
+                                }
+                                
+                                #recommend .item1,
+                                .item2,
+                                .item3 {
+                                    box-shadow: 3px 3px 3px orange;
+                                }
+                                
+                                #recommend .item1 {
+                                    position: relative;
+                                    z-index: 0;
+                                }
+                                
+                                #recommend .item1words {
+                                    top: 0;
+                                    left: 0;
+                                    font-size: 20px;
+                                    padding: 5px;
+                                    position: absolute;
+                                    background-color: orange;
+                                    border-radius: 0 10px 10px 0;
+                                    color: white;
+                                    z-index: 5;
+                                }
+                                
+                                #recommend .item2 {
+                                    position: relative;
+                                    z-index: 0;
+                                }
+                                
+                                #recommend .item2words {
+                                    top: 0;
+                                    left: 0;
+                                    font-size: 20px;
+                                    padding: 5px;
+                                    position: absolute;
+                                    background-color: orange;
+                                    border-radius: 0 10px 10px 0;
+                                    color: white;
+                                    z-index: 5;
+                                }
+                                
+                                #recommend .item3 {
+                                    position: relative;
+                                    z-index: 0;
+                                }
+                                
+                                #recommend .item3words {
+                                    top: 0;
+                                    left: 0;
+                                    font-size: 20px;
+                                    padding: 5px;
+                                    position: absolute;
+                                    background-color: orange;
+                                    border-radius: 0 10px 10px 0;
+                                    color: white;
+                                    z-index: 5;
+                                }
+                                
+                                #recommend .item1words img {
+                                    height: 25px;
+                                    width: 25px;
+                                    transform: translateY(20%);
+                                }
+                                
+                                #recommend .item2words img {
+                                    height: 25px;
+                                    width: 25px;
+                                    transform: translateY(20%);
+                                }
+                                
+                                #recommend .item3words img {
+                                    height: 25px;
+                                    width: 25px;
+                                    transform: translateY(20%);
+                                }
+                                
+                                #recommend .item1_img,
+                                #recommend .item2_img,
+                                #recommend .item3_img {
+                                    height: 250px;
+                                    width: 100%;
+                                    overflow: hidden;
+                                }
+                                
+                                #recommend .item1_img img,
+                                #recommend .item2_img img,
+                                #recommend .item3_img img {
+                                    transform: scale(1);
+                                    transition: all 0.5s ease-out;
+                                }
+                                
+                                #recommend .item1_img img:hover,
+                                #recommend .item2_img img:hover,
+                                #recommend .item3_img img:hover {
+                                    transform: scale(1.2);
+                                }
+                                /* footer */
+                                
+                                #footer {
+                                    width: 100%;
+                                    padding: 20px 0;
+                                    background-color: #ccc;
+                                }
+                                
+                                #footer .item_group {
+                                    text-align: center;
+                                    color: white;
+                                }
+                                
+                                #footer .icon_groups {
+                                    display: flex;
+                                    justify-content: space-evenly;
+                                    align-items: center;
+                                    padding: 5px 0;
+                                }
+                                
+                                #footer .footer_phone,
+                                .footer_address {
+                                    padding: 5px;
+                                }
+                                
+                                #footer .footer_phone i,
+                                .footer_address i {
+                                    display: inline-block;
+                                    transform: translateX(-50%);
+                                }
+                                
+                                #footer .footer_phone span,
+                                .footer_address span {
+                                    font-size: 20px;
+                                }
+                                
+                                #footer p {
+                                    padding-top: 5px;
+                                }
+                                /* up_icon */
+                                
+                                @keyframes up_down {
+                                    0% {
+                                        transform: translateY(0%);
+                                    }
+                                    33%,
+                                    66% {
+                                        transform: translateY(5%);
+                                    }
+                                    50% {
+                                        transform: translateY(0%);
+                                    }
+                                    100% {
+                                        transform: translateY(0%);
+                                    }
+                                }
+                                
+                                #up_icon .item_groups img {
+                                    /* background-image:url(img/琪琪去背.png);
+    height:500px;
+    width:500px; */
+                                    position: fixed;
+                                    bottom: 5px;
+                                    right: 5px;
+                                    animation-name: up_down;
+                                    animation-duration: 5s;
+                                    animation-iteration-count: infinite;
+                                }
+                                /* RWD part */
+                                
+                                @media screen and (max-width:1136px) and (min-width:1050px) {
+                                    #bread .bread_words p {
+                                        color: black;
+                                        padding: 60px 0 50px 20px;
+                                        font-size: 20px;
+                                    }
+                                    #date .item_groups p {
+                                        padding: 90px 20px;
+                                        font-size: 20px;
+                                    }
+                                    #aboutcontent1 {
+                                        padding: 20px;
+                                    }
+                                    #aboutcontent1 .aboutcontent_img1 img {
+                                        display: block;
+                                        margin: auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        margin: 0 auto;
+                                    }
+                                    #aboutcontent2 {
+                                        padding: 20px;
+                                    }
+                                    #aboutcontent2 .aboutcontent_img2 img {
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 600px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        padding-bottom: 90px;
+                                    }
+                                    #aboutcontent3 {
+                                        padding: 20px;
+                                    }
+                                    #aboutcontent3 .aboutcontent_img3 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent4 {
+                                        padding: 20px;
+                                    }
+                                    #aboutcontent4 .aboutcontent_img4 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent5 {
+                                        padding: 20px;
+                                    }
+                                    #aboutcontent5 .aboutcontent_img5 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent6 {
+                                        padding: 20px;
+                                    }
+                                    #aboutcontent6 .aboutcontent_img6 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #about_address {
+                                        padding: 20px;
+                                    }
+                                    #personal {
+                                        padding: 20px;
+                                    }
+                                    #personal .personal_img img {
+                                        border-radius: 50%;
+                                        height: 150px;
+                                        width: 150px;
+                                        box-shadow: 5px 5px 5px lightgreen;
+                                    }
+                                    #personal .personal_info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        margin-left: 10px;
+                                    }
+                                    #personal .personal_other {
+                                        margin-top: 20px;
+                                    }
+                                    #personal .personal_other strong {
+                                        border: 1px solid green;
+                                        color: green;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px green;
+                                        border-radius: 35px;
+                                        padding: 10px;
+                                    }
+                                }
+                                
+                                @media screen and (max-width:1049px) and (min-width:980px) {
+                                    #nav .icons i {
+                                        width: 20px;
+                                        display: flex;
+                                        color: white;
+                                        justify-content: space-around;
+                                        align-items: center;
+                                    }
+                                    #bread .bread_words p {
+                                        color: black;
+                                        padding: 60px 0 50px 20px;
+                                        font-size: 20px;
+                                    }
+                                    #date .item_groups p {
+                                        padding: 90px 20px;
+                                        font-size: 20px;
+                                    }
+                                    #aboutcontent1 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent1 .aboutcontent_img1 img {
+                                        display: block;
+                                        margin: auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        margin: 0 auto;
+                                    }
+                                    #aboutcontent2 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent2 .aboutcontent_img2 img {
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 600px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        padding-bottom: 90px;
+                                    }
+                                    #aboutcontent3 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent3 .aboutcontent_img3 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent4 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent4 .aboutcontent_img4 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent5 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent5 .aboutcontent_img5 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent6 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent6 .aboutcontent_img6 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 650px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #about_address {
+                                        padding: 30px;
+                                    }
+                                    #personal {
+                                        padding: 30px;
+                                    }
+                                    #personal .personal_img img {
+                                        border-radius: 50%;
+                                        height: 150px;
+                                        width: 150px;
+                                        box-shadow: 5px 5px 5px lightgreen;
+                                    }
+                                    #personal .personal_info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        margin-left: 10px;
+                                    }
+                                    #personal .personal_other {
+                                        margin-top: 20px;
+                                    }
+                                    #personal .personal_other strong {
+                                        border: 1px solid green;
+                                        color: green;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px green;
+                                        border-radius: 35px;
+                                        padding: 10px;
+                                    }
+                                }
+                                
+                                @media screen and (max-width:979px) and (min-width:768px) {
+                                    #recommend .item_groups {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        flex-direction: column;
+                                        align-items: stretch;
+                                        width: 80%;
+                                        justify-content: space-between;
+                                    }
+                                    #nav .items ul {
+                                        display: none;
+                                    }
+                                    #nav .icons i {
+                                        display: none;
+                                    }
+                                    #nav {
+                                        width: 100%;
+                                        /* min-width       : 1200px; */
+                                        /* background-color: rgba(255, 0, 0, 0.3); */
+                                        margin: 0 auto;
+                                        position: fixed;
+                                        /* position        : fixed; */
+                                        top: 0;
+                                        /* left            : 0; */
+                                        /* right           : 0; */
+                                        z-index: 3;
+                                        background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                    }
+                                    .hb {
+                                        cursor: pointer;
+                                        border: 2px solid pink;
+                                        width: 40px;
+                                        height: 40px;
+                                        position: fixed;
+                                        background-color: pink;
+                                        top: 10px;
+                                        right: 10px;
+                                        z-index: 99;
+                                        display: block;
+                                        border-radius: 25%;
+                                        transform: scale(1);
+                                        transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+                                    }
+                                    .nav1 {
+                                        text-align: center;
+                                    }
+                                    #banner .image {
+                                        background-image: url(img/龍貓森林場景.JPG);
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center;
+                                        width: 100%;
+                                        overflow: hidden;
+                                        position: relative;
+                                        /* top             : -100px; */
+                                        z-index: -1;
+                                    }
+                                    #banner .banner_words {
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        width: 260px;
+                                        height: 80px;
+                                        color: white;
+                                        font-size: 20px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border-radius: 10px;
+                                        background-color: rgba(240, 128, 128, 0.6);
+                                    }
+                                    #bread .bread_words p {
+                                        color: black;
+                                        padding: 60px 0 50px 20px;
+                                        font-size: 20px;
+                                    }
+                                    #date .item_groups p {
+                                        padding: 90px 20px;
+                                        font-size: 20px;
+                                    }
+                                    #aboutcontent1 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent1 .aboutcontent_img1 img {
+                                        display: block;
+                                        margin: auto;
+                                        height: 550px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        margin: 0 auto;
+                                    }
+                                    #aboutcontent2 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent2 .aboutcontent_img2 img {
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 500px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        padding-bottom: 90px;
+                                    }
+                                    #aboutcontent3 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent3 .aboutcontent_img3 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 550px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent4 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent4 .aboutcontent_img4 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 550px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent5 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent5 .aboutcontent_img5 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 450px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent6 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent6 .aboutcontent_img6 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 500px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #about_address {
+                                        padding: 35px;
+                                    }
+                                    #about_address .address_words strong {
+                                        font-size: 18px;
+                                    }
+                                    #personal {
+                                        padding: 40px;
+                                    }
+                                    #personal .personal_img img {
+                                        border-radius: 50%;
+                                        height: 150px;
+                                        width: 150px;
+                                        box-shadow: 5px 5px 5px lightgreen;
+                                    }
+                                    #personal .personal_info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-between;
+                                        margin-left: 10px;
+                                    }
+                                    #personal .personal_other {
+                                        margin-top: 20px;
+                                    }
+                                    #personal .personal_other strong {
+                                        border: 1px solid green;
+                                        color: green;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px green;
+                                        border-radius: 35px;
+                                        padding: 10px;
+                                    }
+                                    #recommend .date2 {
+                                        transform: translateY(50%);
+                                    }
+                                    #recommend .re_content2 {
+                                        transform: translateY(10%);
+                                    }
+                                    #recommend .re_address3 strong {
+                                        position: absolute;
+                                        bottom: 0
+                                    }
+                                    #recommend .re {
+                                        margin: 20px 0;
+                                        position: relative;
+                                        transition: all .5s;
+                                    }
+                                    #recommend .re:hover {
+                                        transform: translateY(-5%);
+                                    }
+                                    #recommend #recommend .item1_img,
+                                    #recommend .item2_img,
+                                    #recommend .item3_img {
+                                        overflow: hidden;
+                                    }
+                                    #recommend .item1_img img,
+                                    #recommend .item2_img img,
+                                    #recommend .item3_img img {
+                                        object-fit: cover;
+                                        width: 100%;
+                                        transform: scale(1);
+                                        transition: all 0.5s ease-out;
+                                    }
+                                    #recommend .item1_img img:hover,
+                                    #recommend .item2_img img:hover,
+                                    #recommend .item3_img img:hover {
+                                        transform: scale(1.2);
+                                    }
+                                    /* #recommend .item1 a {
+                                    overflow: hidden;
+                                    position: relative;
+                                    border: 2px solid blue;
+                                    width: 100%;
+                                    display: block;
+                                } */
+                                    #recommend .sug1,
+                                    #recommend .sug2,
+                                    #recommend .sug3 {
+                                        position: absolute;
+                                        bottom: 0;
+                                        right: 0;
+                                    }
+                                    #recommend .suggest {
+                                        display: flex;
+                                        margin: auto;
+                                        width: 300px;
+                                        height: 80px;
+                                        background-color: rgba(255, 255, 255, 0.8);
+                                        justify-content: space-between;
+                                    }
+                                    #recommend .suggest img {
+                                        display: inline-block;
+                                        border-radius: 50%;
+                                        height: 60px;
+                                        width: 60px;
+                                        transform: translateY(20%);
+                                        padding-left: 4px;
+                                    }
+                                    #up_icon .item_groups img {
+                                        background-image: url(img/琪琪去背.png);
+                                        height: 130px;
+                                        width: 130px;
+                                        position: fixed;
+                                        bottom: 5px;
+                                        right: 5px;
+                                        animation-name: up_down;
+                                        animation-duration: 5s;
+                                        animation-iteration-count: infinite;
+                                    }
+                                }
+                                
+                                @media screen and (max-width:767px) and (min-width:501px) {
+                                    #nav .items ul {
+                                        display: none;
+                                    }
+                                    #nav .icons i {
+                                        display: none;
+                                    }
+                                    #nav img {
+                                        height: 80px;
+                                        width: 80px;
+                                        vertical-align: middle;
+                                    }
+                                    #nav {
+                                        width: 100%;
+                                        /* min-width       : 1200px; */
+                                        /* background-color: rgba(255, 0, 0, 0.3); */
+                                        margin: 0 auto;
+                                        position: fixed;
+                                        /* position        : fixed; */
+                                        top: 0;
+                                        /* left            : 0; */
+                                        /* right           : 0; */
+                                        z-index: 3;
+                                        background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                    }
+                                    .hb {
+                                        cursor: pointer;
+                                        border: 2px solid pink;
+                                        width: 30px;
+                                        height: 30px;
+                                        position: fixed;
+                                        background-color: pink;
+                                        top: 10px;
+                                        right: 10px;
+                                        z-index: 99;
+                                        display: block;
+                                        border-radius: 25%;
+                                        transform: scale(1);
+                                        transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+                                    }
+                                    .hb span {
+                                        width: 28px;
+                                        height: 5px;
+                                        border-radius: 5px;
+                                        background-color: #fff;
+                                        display: block;
+                                        top: 0;
+                                        right: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        position: absolute;
+                                        margin: auto;
+                                        transition: .2s;
+                                    }
+                                    .nav1 {
+                                        text-align: center;
+                                    }
+                                    #banner .image {
+                                        display: none;
+                                    }
+                                    #banner_shop {
+                                        display: block;
+                                    }
+                                    #banner_shop img {
+                                        width: 100%;
+                                    }
+                                    #banner .banner_words {
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        width: 250px;
+                                        height: 60px;
+                                        color: white;
+                                        font-size: 18px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border-radius: 10px;
+                                        background-color: rgba(240, 128, 128, 0.6);
+                                    }
+                                    #bread .bread_words p {
+                                        color: black;
+                                        padding: 35px 0 35px 10px;
+                                        font-size: 18px;
+                                    }
+                                    #date .item_groups p {
+                                        padding: 45px 10px;
+                                        font-size: 18px;
+                                    }
+                                    #aboutcontent1 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent1 .aboutcontent_img1 img {
+                                        display: block;
+                                        margin: auto;
+                                        height: 300px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        margin: 0 auto;
+                                    }
+                                    #aboutcontent2 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent2 .aboutcontent_img2 img {
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 300px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        padding-bottom: 90px;
+                                    }
+                                    #aboutcontent3 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent3 .aboutcontent_img3 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 300px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent4 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent4 .aboutcontent_img4 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 300px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent5 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent5 .aboutgroups5 h2 {
+                                        font-size: 30px;
+                                        padding: 10px 0;
+                                    }
+                                    #aboutcontent5 .aboutcontent_img5 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 300px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontent6 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent6 .aboutcontent_img6 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 300px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #about_address {
+                                        padding: 35px;
+                                    }
+                                    #about_address .address_words strong {
+                                        font-size: 18px;
+                                    }
+                                    #personal {
+                                        padding: 30px;
+                                    }
+                                    #personal .personal_img {
+                                        margin: auto;
+                                    }
+                                    #personal .personal_img img {
+                                        border-radius: 50%;
+                                        height: 200px;
+                                        width: 200px;
+                                        box-shadow: 5px 5px 5px lightgreen;
+                                    }
+                                    #personal .item_group {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-around;
+                                        border: 2px solid lightgreen;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px lightgreen;
+                                        padding: 35px;
+                                        border-radius: 40px;
+                                    }
+                                    #personal .personal_other {
+                                        margin-top: 20px;
+                                    }
+                                    #personal .personal_other strong {
+                                        border: 1px solid green;
+                                        color: green;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px green;
+                                        border-radius: 35px;
+                                        padding: 10px;
+                                    }
+                                    #recommend h2 {
+                                        font-size: 30px;
+                                        text-align: center;
+                                        padding-bottom: 60px;
+                                    }
+                                    #recommend .re {
+                                        margin: 20px auto;
+                                    }
+                                    #up_icon .item_groups img {
+                                        background-image: url(img/琪琪去背.png);
+                                        height: 100px;
+                                        width: 100px;
+                                        position: fixed;
+                                        bottom: 5px;
+                                        right: 5px;
+                                        animation-name: up_down;
+                                        animation-duration: 5s;
+                                        animation-iteration-count: infinite;
+                                    }
+                                }
+                                
+                                @media screen and (max-width:500px) and (min-width:320px) {
+                                    #nav .items ul {
+                                        display: none;
+                                    }
+                                    #nav .icons i {
+                                        display: none;
+                                    }
+                                    #nav img {
+                                        height: 60px;
+                                        width: 60px;
+                                        vertical-align: middle;
+                                    }
+                                    #nav {
+                                        width: 100%;
+                                        /* min-width       : 1200px; */
+                                        /* background-color: rgba(255, 0, 0, 0.3); */
+                                        margin: 0 auto;
+                                        position: fixed;
+                                        /* position        : fixed; */
+                                        top: 0;
+                                        /* left            : 0; */
+                                        /* right           : 0; */
+                                        z-index: 3;
+                                        background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                                    }
+                                    .hb {
+                                        cursor: pointer;
+                                        border: 2px solid pink;
+                                        width: 30px;
+                                        height: 30px;
+                                        position: fixed;
+                                        background-color: pink;
+                                        top: 10px;
+                                        right: 10px;
+                                        z-index: 99;
+                                        display: block;
+                                        border-radius: 25%;
+                                        transform: scale(1);
+                                        transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+                                    }
+                                    .hb span {
+                                        width: 28px;
+                                        height: 5px;
+                                        border-radius: 5px;
+                                        background-color: #fff;
+                                        display: block;
+                                        top: 0;
+                                        right: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        position: absolute;
+                                        margin: auto;
+                                        transition: .2s;
+                                    }
+                                    .nav1 {
+                                        text-align: center;
+                                    }
+                                    #banner .image {
+                                        display: none;
+                                    }
+                                    #banner_shop {
+                                        display: block;
+                                    }
+                                    #banner_shop img {
+                                        width: 100%;
+                                    }
+                                    #banner .banner_words {
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        width: 220px;
+                                        height: 50px;
+                                        color: white;
+                                        font-size: 16px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border-radius: 10px;
+                                        background-color: rgba(240, 128, 128, 0.6);
+                                    }
+                                    #bread .bread_words p {
+                                        color: black;
+                                        padding: 35px 0 35px 10px;
+                                        font-size: 16px;
+                                    }
+                                    #date .item_groups p {
+                                        padding: 45px 10px;
+                                        font-size: 16px;
+                                    }
+                                    #aboutcontent1 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent1 .aboutcontent_img1 img {
+                                        display: block;
+                                        margin: auto;
+                                        height: 220px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        margin: 0 auto;
+                                    }
+                                    #aboutcontent1 .aboutgroups p {
+                                        font-size: 18px;
+                                    }
+                                    #aboutcontent2 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent2 .aboutcontent_img2 img {
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 200px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                        padding-bottom: 90px;
+                                    }
+                                    #aboutcontnet2 .aboutgroups2 p {
+                                        font-size: 18px;
+                                    }
+                                    #aboutcontent3 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent3 .aboutcontent_img3 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 200px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontnet3 .aboutgroups3 p {
+                                        font-size: 18px;
+                                    }
+                                    #aboutcontent4 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent4 .aboutcontent_img4 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 200px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontnet4 .aboutgroups4 p {
+                                        font-size: 18px;
+                                    }
+                                    #aboutcontent5 {
+                                        padding: 40px;
+                                    }
+                                    #aboutcontent5 .aboutgroups5 h2 {
+                                        font-size: 30px;
+                                        padding: 10px 0;
+                                    }
+                                    #aboutcontent5 .aboutcontent_img5 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 200px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontnet5 .aboutgroups5 p {
+                                        font-size: 18px;
+                                    }
+                                    #aboutcontent6 {
+                                        padding: 30px;
+                                    }
+                                    #aboutcontent6 .aboutcontent_img6 img {
+                                        padding: 20px 0;
+                                        display: block;
+                                        margin: 0 auto;
+                                        height: 200px;
+                                        width: 100%;
+                                        max-width: 1200px;
+                                    }
+                                    #aboutcontnet6 .aboutgroups6 p {
+                                        font-size: 18px;
+                                    }
+                                    #about_address {
+                                        padding: 35px;
+                                    }
+                                    #about_address .address_words strong {
+                                        font-size: 18px;
+                                    }
+                                    #personal {
+                                        padding: 30px;
+                                    }
+                                    #personal .personal_img {
+                                        margin: auto;
+                                    }
+                                    #personal .personal_img img {
+                                        border-radius: 50%;
+                                        height: 200px;
+                                        width: 200px;
+                                        box-shadow: 5px 5px 5px lightgreen;
+                                        margin: auto;
+                                    }
+                                    #personal .item_group {
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: space-around;
+                                        border: 2px solid lightgreen;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px lightgreen;
+                                        padding: 35px;
+                                        border-radius: 40px;
+                                    }
+                                    #personal .personal_other {
+                                        margin-top: 20px;
+                                    }
+                                    #personal .personal_other strong {
+                                        border: 1px solid green;
+                                        color: green;
+                                        background-color: white;
+                                        box-shadow: 3px 3px 3px green;
+                                        border-radius: 35px;
+                                        padding: 10px;
+                                    }
+                                    #recommend h2 {
+                                        font-size: 20px;
+                                        text-align: center;
+                                        padding-bottom: 60px;
+                                    }
+                                    #recommend .re {
+                                        margin: 20px auto;
+                                    }
+                                    #up_icon .item_groups img {
+                                        background-image: url(img/琪琪去背.png);
+                                        height: 100px;
+                                        width: 100px;
+                                        position: fixed;
+                                        bottom: 5px;
+                                        right: 5px;
+                                        animation-name: up_down;
+                                        animation-duration: 5s;
+                                        animation-iteration-count: infinite;
+                                    }
+                                    #footer {
+                                        width: 100%;
+                                        padding: 20px 0;
+                                        background-color: #ccc;
+                                    }
+                                    #footer .item_group {
+                                        text-align: center;
+                                        color: white;
+                                    }
+                                    #footer .icon_groups {
+                                        display: flex;
+                                        justify-content: space-evenly;
+                                        align-items: center;
+                                        padding: 5px 0;
+                                    }
+                                    #footer .footer_phone,
+                                    .footer_address {
+                                        padding: 5px;
+                                        font-size: 16px;
+                                    }
+                                    #footer .footer_phone i,
+                                    .footer_address i {
+                                        display: inline-block;
+                                        transform: translateX(-50%);
+                                        font-size: 16px;
+                                    }
+                                    #footer .footer_phone span,
+                                    .footer_address span {
+                                        font-size: 16px;
+                                    }
+                                }

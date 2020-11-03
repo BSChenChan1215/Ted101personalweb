@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel=stylesheet type="text/css" href="recommend2.css">
+    <script src="https://kit.fontawesome.com/05c128ff7b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../package/swiper-bundle.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="nav">
+            <div class="container">
+                <div class="item_groups">
+                    <div class="nav logo">
+                        <a href="index.html"><img src="img/龍貓logo.png" alt="龍貓logo"></a>
+                    </div>
+                    <div class="nav items">
+                        <ul>
+                            <li class="bottom_line1"><a href="aboutM.html"><strong>宮崎駿について</strong></a></li>
+                            <li class="bottom_line2"><a href="trips.html"><strong>となりのトトロ</strong></a></li>
+                            <li class="bottom_line3"><a href="recommend.html"><strong>宮殿ファンにおすすめ</strong</a></li>
+                            <!-- <li><strong>七岐店</strong></li> -->
+                            <li class="bottom_line4"><a href="text.html"><strong>ちひろ小学校</strong></a></li>
+                        </ul>
+
+                    </div>
+                    <div class="nav icons">
+                        <!-- <i class="fas fa-user-alt"></i>
+                        <i class="fas fa-shopping-cart"></i> -->
+                        <a href="love.html"><i class="fas fa-heart"></i></a>
+                    </div>
+                </div>
+                <input type="checkbox" name="" id="menu-control">
+
+                <label class="hb" for="menu-control">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+                <div class="nav1">
+                    <a href="aboutM.html">宮崎駿について</a>
+                    <a href="trips.html">となりのトトロ</a>
+                    <a href="recommend.html">宮殿ファンにおすすめ</a>
+                    <a href="text.html">ちひろ小学校</a>
+                    <a href="love.html">私のお気に入り</a>
+
+                </div>
+            </div>
+        </div>
+        <!-- banner -->
+        <div id="banner">
+            <div class="banner image">
+                <div class="banner_words"><strong>由布院</strong></div>
+            </div>
+        </div>
+
+        <div id="banner_phone">
+            <img src="img/由布院1.jpg" alt="由布院">
+        </div>
+        <!-- bread -->
+        <div id="bread">
+            <div class="container">
+                <div class="bread_words">
+                    <p><strong>
+                    ホーム / となりのトトロ / キキベーカリー</strong></p>
+                </div>
+            </div>
+        </div>
+        <!-- tripimage -->
+        <div data-aos="zoom-in" data-aos-duration="1000">
+            <div id="tripimage">
+                <div class="container">
+                    <div class="trip image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Set up your HTML -->
+
+        <!-- <div class="owl-carousel">
+        <div><img src="img/魔法公主.jpg" alt="圖片說明"></div>
+        <div><img src="img/魔女宅急便.jpg" alt="圖片說明"></div>
+        <div><img src="img/龍貓.png" alt="圖片說明"></div>
+    </div> -->
+
+
+
+        <!-- tripmap -->
+        <div id="tripmap">
+            <div class="container">
+                <h2><strong>
+                地理情報</strong></h2>
+                <div class="item_groups">
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                        <div class="item_words">
+                            <p class="tripwords"><strong>誰もがジブリの名作アニメ 『魔女の宅急便』を見たことがあ<br>ると思います！キキと黒猫ジジの冒険に感動するだけでな<br>映画にキキを借りたパン屋も見どころ！<br>女将ソナさんの香ばしいパンを見るたびに、<br>すぐに買いたい！日本の九州南西部にある小さな村湯布院<br>キキのパン屋がオープンしました！<br></strong></p>
+                            <p class="trip_address"><strong>
+                    住所：大分県由布市由布院町川上1503-3<br>
+                    休日：年中無休<br>
+                    電話：050-5548-3113<br>               
+                    アクセス：JR九大本線（ゆふ高原線）/由布院駅徒歩16分（1.3km）<br>
+                    </strong></p>
+                        </div>
+                    </div>
+                    <div class="item_map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3335.9658606582475!2d131.36315791460692!3d33.2673860661283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3546ae7e6f1c4a85%3A0x5b78aca424cbd017!2zMTUwMy0zIFl1ZnVpbmNoxY0gS2F3YWthbWksIFl1ZnUsIE9pdGEgODc5LTUxMDLml6XmnKw!5e0!3m2!1szh-TW!2stw!4v1597771810726!5m2!1szh-TW!2stw"
+                            width="550" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- triprecommend  -->
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <div id="triprecommend">
+                <div class="container">
+                    <h2><strong>
+                周辺おすすめ</strong></h2>
+                    <div class="item_groups">
+                        <div class="item_group1">
+                            <div class="trip_words1">
+                                <h3><strong>宮崎駿時計</strong></h3>
+                                <h4><strong>となりのトトロ</strong></h4>
+                            </div>
+                            <div class="trip_img1">
+                                <img src="img/風景宮崎駿大時鐘1.png" alt="宮崎駿大時鐘">
+                                <p class="trip1_contents"><strong>
+                            汐留の日本テレビ塔にある宮崎駿時計
+                            宮崎駿ファン必見の名所
+                            そしてそれは無料です!!!!
+                            JR山手線で汐留駅まで行きます（新橋も徒歩10〜15分ほどです）構想から完成まで6年を要した宮崎駿の時計は、真下に立っているのは「動く城」のような感じ。<br>
+                           住所：東京都港区東新橋1-6-1<br>
+                           參觀時間：隨時<br>
+                 </strong></p>
+                            </div>
+                            <div class="trip1_link">
+                                <p><strong>公式サイト></strong></p>
+                            </div>
+                        </div>
+                        <div class="item_group2">
+                            <div class="trip_words2">
+                                <h3><strong>どんぐり共和國</strong></h3>
+                                <h4><strong>となりのトトロ</strong></h4>
+                            </div>
+                            <div class="trip_img2">
+                                <img src="img/九州_魔女宅急便街道.png" alt="琪琪小舖圖">
+                                <p class="trip2_contents"><strong>     
+                            アニメ 『魔女の宅急便』の本当のシーンが、九州の湯布院のバス駐車場の向かいに登場しました。次回、金鱗湖に足を運んだら、ぜひ足を運んで空飛ぶほうきで写真を撮ってください。店の外にはトトロの看板やバス停の看板が目立ち、見やすい。<br>
+              
+                            住所：東京都1-9-1一番街<br>
+                            営業時間：10：00〜20：30<br>
+                          </strong></p>
+                            </div>
+                            <div class="trip2_link">
+                                <p><strong>公式サイト></strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="ig_words">
+            <h2><strong>宮崎駿ホットスポット</strong></h2>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide1" style="background-image:url(img/四國_千尋溫泉.jpeg)">
+                    <!-- <div class="suggest">
+                        <img src="img/九州_琪琪麵包店.png" alt="貼紙">
+                        <div class="suggest_words">
+                            <p><strong>
+                    料理は美味しくて楽しいので。
+                    </strong>
+                            </p>
+                            <p><strong>
+                        ＃琪琪ベーカリー/九州</strong></p>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="swiper-slide" style="background-image:url(img/風景草壁家3_本州.jpg)" onclick="location.href=
+            'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/風景堐上的波妞渡輪_.jpeg)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/龍貓售票亭_本州.jpg)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/龍貓基金會.png)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/龍貓森林2_本州.jpg)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/龍貓泡芙店_本州.png)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/龍貓_霞山丘陵本州.jpeg)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/四國_道後溫泉本館1.jpg)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+                <div class="swiper-slide" style="background-image:url(img/九州_魔女宅急便街道.png)" onclick="location.href=
+                'https://www.instagram.com/explore/tags/%E5%AE%AE%E5%B4%8E%E9%A7%BF/';"></div>
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
+        <!-- footer -->
+        <div id="footer">
+            <div class="container">
+                <div class="item_group">
+                    <div class="icon_groups">
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                        <i class="fab fa-twitter-square fa-3x"></i>
+                        <i class="fab fa-instagram-square fa-3x"></i>
+                    </div>
+                    <div class="footer_phone">
+                        <i class="fas fa-phone-alt fa-2x"></i>
+                        <span><strong>電話:(02)12345678</strong></span>
+                    </div>
+                    <div class="footer_address">
+                        <i class="fas fa-map-marked  fa-2x"></i>
+                        <span><strong>地址:台北市內湖區內湖路一段50號</strong></span>
+                    </div>
+                    <p><strong>Copyright@漫遊日本版權所有</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- up_icon -->
+    <div id="up_icon">
+        <div class="container">
+            <div class="item_groups">
+                <img src="img/動漫圖片/琪琪.png" alt="去背圖">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel();
+        });
+    </script>
+
+
+    <!-- Swiper JS -->
+    <script src="../package/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            autoplay: {
+                delay: 3000,
+            },
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+
+
+        // DOM 載入完成後執行
+        $(function() {
+
+            // 點擊按鈕，頁面滑到最上方
+            $("#up_icon").on("click", function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1500);
+            });
+
+        });
+
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1072 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "黑體";
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/漫畫一.png);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.container1 {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* padding-top : 100px; */
+}
+
+.item_groups {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* nav */
+
+#nav {
+    width: 100%;
+    /* background-color: rgba(255, 0, 0, 0.3); */
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+    background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+}
+
+#nav img {
+    height: 100px;
+    width: 100px;
+    vertical-align: middle;
+}
+
+#nav .items {
+    width: 800px;
+}
+
+#nav .items ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#nav .icons i {
+    width: 100px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav .icons i:hover {
+    color: red;
+}
+
+
+/* 
+#nav .icons i {
+    color: white;
+} */
+
+#nav .bottom_line1 strong,
+#nav .bottom_line2 strong,
+#nav .bottom_line3 strong,
+#nav .bottom_line4 strong {
+    /* border:2px solid yellow; */
+    padding-bottom: 3px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+#nav .bottom_line2 {
+    transform: translateX(10%);
+}
+
+#nav .bottom_line3 {
+    transform: translateX(20%);
+}
+
+#nav .bottom_line2 strong::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -20%;
+    background-color: white;
+    height: 3px;
+    width: 100%;
+}
+
+#nav .bottom_line1 strong::after,
+#nav .bottom_line3 strong::after,
+#nav .bottom_line4 strong::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -20%;
+    background-color: white;
+    height: 3px;
+    width: 0px;
+    transition: width .5s;
+}
+
+#nav .bottom_line1 a:hover strong::after,
+#nav .bottom_line3 a:hover strong::after,
+#nav .bottom_line4 a:hover strong::after {
+    width: 100%;
+}
+
+#nav .icons {
+    width: 100px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav .nav strong {
+    font-size: 20px;
+}
+
+.hb {
+    cursor: pointer;
+    border: 2px solid pink;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    background-color: pink;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+    display: none;
+    border-radius: 25%;
+    transform: scale(1);
+    transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+}
+
+.hb span {
+    width: 36px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+    transition: .2s;
+}
+
+.hb span:first-child {
+    transform: translateY(-6px);
+}
+
+.hb span:last-child {
+    transform: translateY(6px);
+}
+
+#menu-control {
+    display: none;
+}
+
+#menu-control:checked~.hb {
+    background-color: pink;
+    border-radius: 50%;
+    transform: scale(1.2);
+}
+
+#menu-control:checked~.hb span:nth-child(2) {
+    display: none;
+}
+
+#menu-control:checked~.hb span:first-child {
+    transform: translateY(0px) rotate(45deg);
+}
+
+#menu-control:checked~.hb span:last-child {
+    transform: translateY(0px) rotate(135deg);
+}
+
+.nav1 {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+    background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+    transition: 1s;
+}
+
+.nav1 a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px .5;
+    padding: 10px 20px;
+    border-bottom: 1px dotted #666;
+}
+
+#menu-control:checked~.nav1 {
+    max-height: calc(100vh - 60px);
+}
+
+
+/* banner */
+
+#banner .image {
+    background-image: url(img/旅遊部落客5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner_phone {
+    display: none;
+}
+
+#banner .banner_words {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(240, 128, 128, 0.6);
+}
+
+
+/* trips */
+
+#trips .tripstopword {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#trips .item_group {
+    font-size: 0;
+    /* display: flex; */
+    /* border : 2px solid red; */
+    width: 20%;
+    padding: 5px;
+}
+
+#trips .item_groups {
+    /* width: 1000px; */
+    width: 80%;
+    /* border: 2px solid green; */
+}
+
+#trips .trips_items {
+    padding: 10px;
+}
+
+
+/* #trips .container {
+    border: 2px solid green;
+    border: 2px solid gray;
+} */
+
+#trips p,
+h2,
+label {
+    font-size: 20px;
+}
+
+#trips .tr {
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+}
+
+#trips .button {
+    border: 1px solid green;
+    color: green;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#trips .button:hover {
+    color: white;
+    background-color: green;
+    transition: all 1s;
+}
+
+
+/* #trips .trips_lists {
+    display: flex;
+    border: 2px solid gray;
+} */
+
+
+/* trips_imgs */
+
+#trips .tr strong {
+    text-shadow: 3px 3px 5px rgb(85, 83, 83);
+}
+
+#trips .list1 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+img {
+    max-width: 100%;
+}
+
+#trips .list1_word strong {
+    /* position: absolute; */
+    color: black;
+    /* font-size: 20px; */
+    transform: translateX(130%);
+    /* border: 1px solid orange; */
+}
+
+#trips .list1_word2 strong {
+    transform: translateX(118%);
+    color: black;
+    bottom: 5px;
+}
+
+#trips .list1_groups {
+    transform: translateY(30%);
+}
+
+
+/* list2 */
+
+#trips .list2 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list2_word strong {
+    color: black;
+    /* font-size: 20px; */
+    transform: translateX(118%);
+}
+
+#trips .list2_word2 strong {
+    transform: translateX(105%);
+    color: black;
+}
+
+#trips .list2_groups {
+    transform: translateY(30%);
+}
+
+
+/*list3*/
+
+#trips .list3 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list3_word strong {
+    /* position: absolute; */
+    color: black;
+    /* font-size: 20px; */
+    transform: translateX(130%);
+    /* border: 1px solid orange; */
+}
+
+#trips .list3_word2 strong {
+    transform: translateX(118%);
+    color: black;
+}
+
+#trips .list3_groups {
+    transform: translateY(30%);
+}
+
+
+/*list4*/
+
+#trips .list4 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list4_word strong {
+    /* position: absolute; */
+    color: black;
+    /* font-size: 20px; */
+    transform: translateX(70%);
+    /* border: 1px solid orange; */
+}
+
+#trips .list4_word2 strong {
+    transform: translateX(118%);
+    color: black;
+}
+
+#trips .list4_groups {
+    transform: translateY(30%);
+}
+
+
+/*list5*/
+
+#trips .list5 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list5_word strong {
+    /* position: absolute; */
+    color: black;
+    /* font-size: 20px; */
+    transform: translateX(60%);
+    /* border: 1px solid orange; */
+}
+
+#trips .list5_word2 strong {
+    transform: translateX(118%);
+    color: black;
+}
+
+#trips .list5_groups {
+    transform: translateY(30%);
+}
+
+
+/*list6*/
+
+#trips .list6 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list6_word strong {
+    color: black;
+    transform: translateX(70%);
+}
+
+#trips .list6_word2 strong {
+    transform: translateX(118%);
+    color: black;
+}
+
+#trips .list6_groups {
+    transform: translateY(30%);
+}
+
+
+/*list7*/
+
+#trips .list7 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list7_word strong {
+    color: black;
+    transform: translateX(50%);
+}
+
+#trips .list7_word2 strong {
+    transform: translateX(118%);
+    color: black;
+}
+
+#trips .list7_groups {
+    transform: translateY(30%);
+}
+
+
+/*list8*/
+
+#trips .list8 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list8_word strong {
+    color: black;
+    transform: translateX(95%);
+}
+
+#trips .list8_word2 strong {
+    transform: translateX(118%);
+    color: black;
+}
+
+#trips .list8_groups {
+    transform: translateY(30%);
+}
+
+
+/*list9*/
+
+#trips .list9 {
+    width: 300px;
+    height: 300px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid red;
+}
+
+#trips .list9_word strong {
+    color: black;
+    transform: translateX(70%);
+}
+
+#trips .list9_word2 strong {
+    transform: translateX(105%);
+    color: black;
+}
+
+#trips .list9_groups {
+    transform: translateY(30%);
+}
+
+#trips .list4 img,
+#trips .list7 img,
+#trips .list9 img {
+    transform: translateX(25%);
+}
+
+
+/* pagination */
+
+.pagination {
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    font-size: 0;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+table .pagination ul {
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+}
+
+.pagination li {
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+    padding: 10px;
+}
+
+.pagination .one {
+    background-color: pink;
+    color: red;
+}
+
+.pagination .other:hover {
+    background-color: pink;
+    color: red;
+    cursor: pointer;
+}
+
+
+/* footer */
+
+#footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: #ccc;
+}
+
+#footer .item_group {
+    text-align: center;
+    color: white;
+}
+
+#footer .icon_groups {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 0;
+}
+
+#footer .footer_phone,
+.footer_address {
+    padding: 5px;
+}
+
+#footer .footer_phone i,
+.footer_address i {
+    display: inline-block;
+    transform: translateX(-50%);
+}
+
+#footer .footer_phone span,
+.footer_address span {
+    font-size: 20px;
+}
+
+#footer p {
+    padding-top: 5px;
+}
+
+
+/* up_icon */
+
+@keyframes up_down {
+    0% {
+        transform: translateY(0%);
+    }
+    33%,
+    66% {
+        transform: translateY(5%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+#up_icon .item_groups img {
+    /* background-image:url(img/琪琪去背.png);
+    height:500px;
+    width:500px; */
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    animation-name: up_down;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+#search_icon img {
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    display: none;
+    height: 150px;
+    width: 150px;
+    animation-name: up_down;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+
+/* cover ad */
+
+div.right_sidebar {
+    position: fixed;
+    height: 80vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translate(0%, 100%);
+    overflow-y: scroll;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)3%);
+    background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)3%);
+    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)3%);
+    background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)3%);
+    color: white;
+    padding: 10px 20px 10px 10px;
+    /* 過場效果 */
+    transition: transform 1s ease-in-out;
+}
+
+.right_sidebar .btn_drawer {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-shadow: 3px 3px 3px red;
+    cursor: pointer;
+}
+
+div.right_sidebar::-webkit-scrollbar {
+    background: transparent;
+}
+
+div.right_sidebar.-open {
+    transform: translate(0%, 0%);
+}
+
+
+/* trips */
+
+#trips .item_group2 {
+    font-size: 0;
+    /* display: flex; */
+    /* border : 2px solid red; */
+    width: 100%;
+    padding: 5px;
+}
+
+
+/* #trips .item_groups { */
+
+
+/* width: 1000px; */
+
+
+/*     width: 80%; */
+
+
+/* border: 2px solid green; */
+
+
+/* } */
+
+#trips .trips_items {
+    padding: 10px;
+}
+
+
+/* #trips .container {
+     border: 2px solid green; 
+     border: 2px solid gray; 
+} */
+
+#trips p,
+h2,
+label {
+    font-size: 20px;
+}
+
+.right_sidebar .item_group2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trips .tr1,
+#trips .tr2,
+#trips .tr3 {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#trips label {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+#trips .button {
+    border: 1px solid pink;
+    color: red;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px pink;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#trips .button:hover {
+    color: white;
+    background-color: pink;
+    transition: all 1s;
+}
+
+@media screen and (max-width:1116px) {
+    .item_groups {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #trips .list1,
+    #trips .list2,
+    #trips .list3,
+    #trips .list4,
+    #trips .list5,
+    #trips .list6,
+    #trips .list7,
+    #trips .list8,
+    #trips .list9,
+    #trips .list10,
+    #trips .list11,
+    #trips .list12 {
+        margin: 20px 20px;
+    }
+    @media screen and (max-width:1050px) {
+        #nav .icons i {
+            display: none;
+        }
+        #nav .items ul {
+            display: none;
+        }
+        .hb {
+            cursor: pointer;
+            border: 2px solid pink;
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            background-color: pink;
+            top: 10px;
+            right: 10px;
+            z-index: 99;
+            display: block;
+            border-radius: 25%;
+            transform: scale(1);
+            transition: border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+        }
+        .nav1 {
+            text-align: center;
+        }
+    }
+    @media screen and (max-width:959px) {
+        #trips .item_group {
+            display: none;
+        }
+        #trips .item_groups {
+            margin: auto;
+        }
+        #up_icon .item_groups img {
+            height: 130px;
+            width: 130px;
+        }
+    }
+    @media screen and (max-width:916px) {
+        #nav .items {
+            width: 80%;
+        }
+        #nav img {
+            height: 80px;
+            width: 80px;
+        }
+        #banner .banner_words {
+            width: 200px;
+            height: 60px;
+            font-size: 20px;
+        }
+        .hb {
+            top: 10px;
+        }
+        #trips .list1,
+        #trips .list2,
+        #trips .list3,
+        #trips .list4,
+        #trips .list5,
+        #trips .list6,
+        #trips .list7,
+        #trips .list8,
+        #trips .list9,
+        #trips .list10,
+        #trips .list11,
+        #trips .list12 {
+            width: 300px;
+            height: 300px;
+        }
+        #banner .image {
+            /* background-image: url(img/宮崎駿場景.jpg); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            /* height          : 100vh; */
+            overflow: hidden;
+            position: relative;
+        }
+        #trips div.item_groups.rwd916 {
+            width: 100%;
+        }
+        #search_icon img {
+            position: fixed;
+            left: 5px;
+            bottom: 5px;
+            display: block;
+            /* display               : none; */
+            height: 130px;
+            width: 130px;
+            animation-name: up_down;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        #trips .list1_word {
+            transform: translateX(200%);
+        }
+        #trips .list2_word {
+            transform: translateX(60%);
+        }
+        #trips .list3_word {
+            transform: translateX(130%);
+        }
+        #trips .list4_word {
+            transform: translateX(200%);
+        }
+        #trips .list5_word {
+            transform: translateX(200%);
+        }
+        #trips .list6_word {
+            transform: translateX(150%);
+        }
+        #trips .list7_word {
+            transform: translateX(130%);
+        }
+        #trips .list8_word {
+            transform: translateX(35%);
+        }
+        #trips .list9_word {
+            transform: translateX(25%);
+        }
+        #trips .list10_word {
+            transform: translateX(150%);
+        }
+        #trips .list11_word {
+            transform: translateX(200%);
+        }
+        #trips .list12_word {
+            transform: translateX(200%);
+        }
+    }
+    @media screen and (max-width:767px) {
+        .hb {
+            height: 30px;
+            width: 30px;
+            top: 10px;
+        }
+        .hb span {
+            width: 27px;
+        }
+        #search_icon img {
+            height: 100px;
+            width: 100px;
+        }
+        #up_icon .item_groups img {
+            height: 110px;
+            width: 110px;
+        }
+        #banner {
+            display: none;
+        }
+        #banner_phone {
+            display: block;
+        }
+        #banner_phone img {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width:520px) {
+        .hb {
+            height: 30px;
+            width: 30px;
+            top: 10px;
+        }
+        .hb span {
+            width: 27px;
+        }
+        #nav .items {
+            width: 60%;
+        }
+        #nav img {
+            height: 60px;
+            width: 60px;
+        }
+        #up_icon .item_groups img {
+            background-image: url(img/琪琪去背.png);
+            height: 105px;
+            width: 105px;
+        }
+        #banner .banner_words {
+            width: 200px;
+            height: 60px;
+            font-size: 20px;
+        }
+        .pagination {
+            margin-top: 20px;
+            width: 100%;
+            display: block;
+            font-size: 0;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        table .pagination ul {
+            border: 1px solid black;
+            display: inline-block;
+            font-size: 16px;
+            color: black;
+        }
+        .pagination li {
+            border: 1px solid black;
+            display: inline-block;
+            font-size: 16px;
+            color: black;
+            padding: 5px;
+        }
+        #footer .footer_phone span,
+        .footer_address span {
+            font-size: 16px;
+        }
+        #footer .footer_phone i,
+        .footer_address i {
+            font-size: 16px;
+        }
+        #search_icon img {
+            height: 90px;
+            width: 90px;
+        }
+    }
+}

@@ -1,0 +1,1971 @@
+                    * {
+                        padding        : 0;
+                        margin         : 0;
+                        list-style     : none;
+                        text-decoration: none;
+                        font-family    : "黑體";
+                    }
+
+                    .container {
+                        width    : 100%;
+                        max-width: 1200px;
+                        margin   : auto;
+                    }
+
+                    .item_groups {
+                        display        : flex;
+                        flex-wrap      : wrap;
+                        align-items    : center;
+                        justify-content: space-between;
+                    }
+
+                    /* nav */
+
+                    #nav {
+                        width              : 100%;
+                        /* background-color: rgba(255, 0, 0, 0.3); */
+                        margin             : 0 auto;
+                        position           : fixed;
+                        top                : 0;
+                        left               : 0;
+                        right              : 0;
+                        z-index            : 3;
+                        background         : linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                        background         : -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                        background         : -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                        background         : -o-linear-gradient(90deg, rgba(0, 0, 0, 0)14%, rgba(255, 85, 78, 0.3)40%);
+                    }
+
+                    #nav img {
+                        height        : 100px;
+                        width         : 100px;
+                        vertical-align: middle;
+                    }
+
+                    #nav .items {
+                        width    : 800px;
+                        /* border: 1px solid red; */
+                        /* border:1px solid yellow; */
+                    }
+
+                    #nav .items ul {
+                        display        : flex;
+                        justify-content: space-between;
+                        align-items    : center;
+                        color          : white;
+                    }
+
+                    #nav .bottom_line1 strong,
+                    #nav .bottom_line2 strong,
+                    #nav .bottom_line3 strong,
+                    #nav .bottom_line4 strong {
+                        /* border:2px solid yellow; */
+                        padding-bottom : 3px;
+                        color          : white;
+                        text-decoration: none;
+                        position       : relative;
+                    }
+
+                    /* #nav .bottom_line2 {
+            transform: translateX(10%);
+        }
+        
+        #nav .bottom_line3 {
+            transform: translateX(20%);
+        } */
+
+                    #nav .bottom_line1 strong::after,
+                    #nav .bottom_line2 strong::after,
+                    #nav .bottom_line3 strong::after,
+                    #nav .bottom_line4 strong::after {
+                        content         : "";
+                        position        : absolute;
+                        display         : block;
+                        left            : 0;
+                        bottom          : -20%;
+                        background-color: white;
+                        height          : 3px;
+                        width           : 0px;
+                        transition      : width .5s;
+                    }
+
+                    #nav .bottom_line1 a:hover strong::after,
+                    #nav .bottom_line2 a:hover strong::after,
+                    #nav .bottom_line3 a:hover strong::after,
+                    #nav .bottom_line4 a:hover strong::after {
+                        width: 100%;
+                    }
+
+                    #nav .icons i {
+                        width          : 100px;
+                        display        : flex;
+                        color          : white;
+                        justify-content: space-between;
+                        align-items    : center;
+                    }
+
+                    #nav .icons a {
+                        display  : block;
+                        /* border: #000 1px solid; */
+                    }
+
+                    #nav .icons i:hover {
+                        color: red;
+                    }
+
+                    #nav .nav strong {
+                        font-size: 20px;
+                    }
+
+                    /* ham */
+                    /* #ham {
+                        border: 2px solid red;
+                    } */
+
+                    .hb {
+                        cursor          : pointer;
+                        border          : 2px solid pink;
+                        width           : 40px;
+                        height          : 40px;
+                        position        : fixed;
+                        background-color: pink;
+                        top             : 10px;
+                        right           : 10px;
+                        z-index         : 99;
+                        display         : none;
+                        border-radius   : 25%;
+                        transform       : scale(1);
+                        transition      : border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+                    }
+
+                    .hb span {
+                        width           : 36px;
+                        height          : 5px;
+                        border-radius   : 5px;
+                        background-color: #fff;
+                        display         : block;
+                        top             : 0;
+                        right           : 0;
+                        left            : 0;
+                        bottom          : 0;
+                        position        : absolute;
+                        margin          : auto;
+                        transition      : .2s;
+                    }
+
+                    .hb span:first-child {
+                        transform: translateY(-6px);
+                    }
+
+                    .hb span:last-child {
+                        transform: translateY(6px);
+                    }
+
+                    #menu-control {
+                        display: none;
+                    }
+
+                    #menu-control:checked~.hb {
+                        /* background-color: red; */
+                        border-radius: 50%;
+                        transform    : scale(1.2);
+                    }
+
+                    #menu-control:checked~.hb span:nth-child(2) {
+                        display: none;
+                    }
+
+                    #menu-control:checked~.hb span:first-child {
+                        transform: translateY(0px) rotate(45deg);
+                    }
+
+                    #menu-control:checked~.hb span:last-child {
+                        transform: translateY(0px) rotate(135deg);
+                    }
+
+                    .nav1 {
+                        width     : 100%;
+                        max-height: 0;
+                        overflow  : hidden;
+                        background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                        background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                        background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                        background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 85, 78, 0.5)5%);
+                        transition: 1s;
+                    }
+
+                    .nav1 a {
+                        display        : block;
+                        text-decoration: none;
+                        color          : white;
+                        font-size      : 20px;
+                        font-weight    : bold;
+                        text-shadow    : 5px 5px 5px .5;
+                        padding        : 10px 20px;
+                        border-bottom  : 1px dotted #666;
+                    }
+
+                    #menu-control:checked~.nav1 {
+                        max-height: calc(100vh - 60px);
+                    }
+
+                    /* banner */
+
+                    #banner .video {
+                        position : relative;
+                        font-size: 0;
+                    }
+
+                    #banner .video video {
+                        width     : 100%;
+                        height    : 100vh;
+                        overflow  : hidden;
+                        z-index   : 0;
+                        object-fit: fill;
+                        /* top    : -40px; */
+                    }
+
+                    #banner .banner_cover {
+                        width           : 100%;
+                        height          : 100vh;
+                        background-color: white;
+                        opacity         : 0;
+                        overflow        : hidden;
+                        position        : absolute;
+                        top             : 0px;
+                        left            : 0px;
+                        z-index         : 1;
+                    }
+
+                    #banner .banner_words {
+                        position        : absolute;
+                        bottom          : 0;
+                        left            : 0;
+                        width           : 300px;
+                        height          : 100px;
+                        color           : white;
+                        font-size       : 25px;
+                        display         : flex;
+                        align-items     : center;
+                        justify-content : center;
+                        border-radius   : 10px;
+                        background-color: rgba(240, 128, 128, 0.6);
+                    }
+
+                    /* aboutjapan */
+
+                    #aboutjapan {
+                        width              : 100%;
+                        padding            : 100px 0 100px 0;
+                        background-size    : cover;
+                        background-repeat  : no-repeat;
+                        background-position: center;
+                    }
+
+                    #aboutjapan .container img {
+                        height   : 100px;
+                        width    : 100px;
+                        display  : inline-block;
+                        transform: translateY(32%);
+                    }
+
+                    #aboutjapan h2 {
+                        text-align: center;
+                        font-size : 50px;
+                    }
+
+                    #aboutjapan p {
+                        font-size: 20px;
+                    }
+
+                    #aboutjapan .item_groups {
+                        padding-top    : 50px;
+                        justify-content: space-around;
+                    }
+
+                    #aboutjapan .about_img {
+                        /* border: 1px solid red; */
+                        position  : relative;
+                        width     : 600px;
+                        height    : 600px;
+                        margin-top: 100px;
+                    }
+
+                    #aboutjapan .north {
+                        display  : block;
+                        position : absolute;
+                        top      : -150%;
+                        left     : -80%;
+                        transform: rotate(45deg);
+                        width    : 150px;
+                        height   : 150px;
+                        opacity  : 0;
+                        z-index  : 1;
+                    }
+
+                    #aboutjapan .north_island2:hover .north_island,
+                    #aboutjapan .main_island2:hover .main_island,
+                    #aboutjapan .south_island2:hover .south_island,
+                    #aboutjapan .west_island2:hover .west_island {
+                        /* display:none; */
+                        opacity: 0;
+                    }
+
+                    #aboutjapan .north_island2:hover .north_island2 p.north2_word,
+                    #aboutjapan .main_island2:hover .main_island2 p.main2_word,
+                    #aboutjapan .south_island2:hover .south_island2 p.south2_word,
+                    #aboutjapan .west_island2:hover .west_island2 p.west2_word {
+                        color       : white;
+                        /* font-size: 22px; */
+                    }
+
+                    #aboutjapan .main_island {
+                        /* border: 1px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/日本本州.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 340px;
+                        height           : 340px;
+                        top              : 0;
+                        bottom           : 0;
+                        right            : 0;
+                        left             : 0;
+                        margin           : auto;
+                        opacity          : 1;
+                        transition       : all 1s;
+                    }
+
+                    #aboutjapan .main_island2 {
+                        /* border: 1px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/橘色本州.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 340px;
+                        height           : 340px;
+                        top              : 0;
+                        bottom           : 0;
+                        right            : 0;
+                        left             : 0;
+                        margin           : auto;
+                    }
+
+                    #aboutjapan .main_island p.main_word {
+                        color    : black;
+                        position : absolute;
+                        right    : 20%;
+                        bottom   : 40%;
+                        /* right :0; */
+                        /* bottom:0; */
+                        /* margin:auto; */
+                    }
+
+                    #aboutjapan .main {
+                        /* background-color: rgba(0, 0, 0, 0.5); */
+                        display   : block;
+                        position  : absolute;
+                        top       : -600%;
+                        left      : -200%;
+                        transform : rotate(45deg);
+                        width     : 150px;
+                        height    : 300px;
+                        /* opacity: 0; */
+                        color     : green;
+                        z-index   : 1;
+                    }
+
+                    #aboutjapan .main_island2 p.main2_word {
+                        /* border:1px solid green; */
+                        color     : white;
+                        position  : absolute;
+                        right     : 20%;
+                        bottom    : 40%;
+                        /* right  :0; */
+                        /* bottom :0; */
+                        /* margin :auto; */
+                        transition: all 1s;
+                    }
+
+                    #aboutjapan .north_island {
+                        /* border:1px solid blue;  */
+                        position         : absolute;
+                        background-image : url(img/日本北海道.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 155px;
+                        height           : 155px;
+                        top              : 0;
+                        right            : 0;
+                        opacity          : 1;
+                        transition       : all 1s;
+                    }
+
+                    #aboutjapan .north_island2 {
+                        /* border: 2px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/紅色北海道.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 155px;
+                        height           : 155px;
+                        top              : 0;
+                        right            : 0;
+                    }
+
+                    #aboutjapan .north_island p.north_word {
+                        /* border:1px solid green; */
+                        /* color: white; */
+                        color    : black;
+                        position : absolute;
+                        transform: translateX(-50%) translateY(-50%);
+                        left     : 50%;
+                        top      : 50%;
+                        /* right :0; */
+                        /* bottom:0; */
+                        /* margin:auto; */
+                    }
+
+                    #aboutjapan .north_island2 p.north2_word {
+                        /* border:1px solid green; */
+                        color     : white;
+                        position  : absolute;
+                        transform : translateX(-50%) translateY(-50%);
+                        left      : 50%;
+                        top       : 50%;
+                        /* right  :0; */
+                        /* bottom :0; */
+                        /* margin :auto; */
+                        transition: all 1s;
+                    }
+
+                    #aboutjapan .west_island {
+                        /* border:1px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/日本九州.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 140px;
+                        height           : 140px;
+                        opacity          : 1;
+                        transition       : all 1s;
+                    }
+
+                    #aboutjapan .west_island2 {
+                        /* border:1px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/藍色九州.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 140px;
+                        height           : 140px;
+                        bottom           : 50px;
+                        left             : 40px;
+                    }
+
+                    #aboutjapan .west_island p.west_word {
+                        /* border:1px solid green; */
+                        /* color: white; */
+                        color    : black;
+                        position : absolute;
+                        left     : 30%;
+                        top      : 20%;
+                        /* right :0; */
+                        /* bottom:0; */
+                        /* margin:auto; */
+                    }
+
+                    #aboutjapan .west {
+                        /* background-color: rgba(0, 0, 0, 0.5); */
+                        display   : block;
+                        position  : absolute;
+                        top       : -35%;
+                        left      : 10;
+                        transform : rotate(45deg);
+                        width     : 80px;
+                        height    : 80px;
+                        /* opacity: 0; */
+                        color     : green;
+                        z-index   : 1;
+                    }
+
+                    #aboutjapan .west_island2 p.west2_word {
+                        /* border:1px solid green; */
+                        color     : white;
+                        position  : absolute;
+                        left      : 30%;
+                        top       : 20%;
+                        /* right  :0; */
+                        /* bottom :0; */
+                        /* margin :auto; */
+                        transition: all 1s;
+                    }
+
+                    #aboutjapan .south_island {
+                        /* border:1px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/日本四國.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 100px;
+                        height           : 100px;
+                        top              : 0;
+                        left             : 0;
+                        opacity          : 1;
+                        transition       : all 1s;
+                    }
+
+                    #aboutjapan .south_island2 {
+                        /* border:1px solid blue; */
+                        position         : absolute;
+                        background-image : url(img/綠色四國.png);
+                        background-size  : contain;
+                        background-repeat: no-repeat;
+                        width            : 100px;
+                        height           : 100px;
+                        bottom           : 80px;
+                        left             : 150px;
+                    }
+
+                    #aboutjapan .south_island p.south_word {
+                        /* border:1px solid green; */
+                        color     : black;
+                        position  : absolute;
+                        left      : 30%;
+                        top       : 18%;
+                        transition: all 1s;
+                        /* right  :0; */
+                        /* bottom :0; */
+                        /* margin :auto; */
+                    }
+
+                    #aboutjapan .south {
+                        display   : block;
+                        position  : absolute;
+                        top       : -40%;
+                        left      : -40%;
+                        transform : rotate(45deg);
+                        width     : 80px;
+                        height    : 80px;
+                        /* opacity: 0; */
+                        color     : green;
+                        z-index   : 1;
+                    }
+
+                    #aboutjapan .south_island2 p.south2_word {
+                        /* border:1px solid green; */
+                        color     : white;
+                        position  : absolute;
+                        left      : 30%;
+                        top       : 18%;
+                        /* right  :0; */
+                        /* bottom :0; */
+                        /* margin :auto; */
+                        transition: all 1s;
+                    }
+
+                    /* likeanimation */
+
+                    #likeanimation {
+                        background-color: rgba(255, 255, 255, 0.616);
+                    }
+
+                    #likeanimation .like_words {
+                        text-align: center;
+                        color     : rgba(0, 0, 0, 0.932);
+                        padding   : 100px 0;
+                    }
+
+                    #likeanimation h2 {
+                        font-size: 50px;
+                    }
+
+                    #likeanimation p {
+                        font-size  : 20px;
+                        padding-top: 20px;
+                    }
+
+                    #likeanimation .p_word {
+                        text-align  : right;
+                        margin-right: 300px;
+                    }
+
+                    /* roles */
+
+                    #role {
+                        width : 100%;
+                        height: 100vh;
+                    }
+
+                    #role_phone {
+                        display: none;
+                    }
+
+                    #role div {
+                        background-position  : center;
+                        background-repeat    : no-repeat;
+                        background-size      : cover;
+                        background-attachment: fixed;
+                        width                : 100%;
+                        height               : 100vh;
+                        overflow             : hidden;
+                        background-image     : url(img/宮崎駿背景圖.png);
+                    }
+
+                    /* animations */
+
+                    #animations h2 {
+                        text-align: center;
+                        font-size : 40px;
+                        padding   : 100px 0;
+                    }
+
+                    body {
+                        background      : #fff;
+                        font-family     : Helvetica Neue, Helvetica, Arial, sans-serif;
+                        font-size       : 14px;
+                        color           : #000;
+                        margin          : 0;
+                        padding         : 0;
+                        background-image: url(img/漫畫一.png);
+                    }
+
+                    .swiper_container1 {
+                        width        : 600px;
+                        height       : 600px;
+                        position     : absolute;
+                        margin-bottom: 20px;
+                        border       : 5px solid pink;
+                        box-shadow   : 10px 10px 12px pink;
+                    }
+
+                    .swiper_slide1 {
+                        background-position: center;
+                        background-size    : cover;
+                        cursor             : pointer;
+                    }
+
+                    /* recommend */
+
+                    #recommend {
+                        padding-top: 150px;
+                    }
+
+                    #recommend h2 {
+                        font-size     : 50px;
+                        text-align    : center;
+                        padding-bottom: 60px;
+                    }
+
+                    #recommend .item_groups {
+                        margin    : 0 auto;
+                        padding   : 20px;
+                        /* outline: 1px solid red; */
+                    }
+
+                    #recommend .item1,
+                    .item2,
+                    .item3,
+                    .item4,
+                    .item5,
+                    .item6 {
+                        font-size: 0;
+                        margin   : 20px 0;
+                    }
+
+                    #recommend .re img {
+                        display: inline-block;
+                        height : 250px;
+                        width  : 300px;
+                        z-index: 0;
+                    }
+
+                    #recommend .suggest {
+                        display         : flex;
+                        margin          : auto;
+                        width           : 300px;
+                        height          : 100px;
+                        background-color: white;
+                        justify-content : space-between;
+                    }
+
+                    #recommend .suggest img {
+                        display      : inline-block;
+                        border-radius: 50%;
+                        height       : 60px;
+                        width        : 60px;
+                        transform    : translateY(60%);
+                        padding-left : 4px;
+                    }
+
+                    #recommend .suggest_words {
+                        display        : flex;
+                        flex-direction : column;
+                        justify-content: space-between;
+                        padding        : 4px;
+                    }
+
+                    #recommend .suggest_words p {
+                        font-size   : 1rem;
+                        padding-left: 20px;
+                        text-align  : justify;
+                    }
+
+                    #recommend .re_date {
+                        font-size: 13px;
+                        color    : gray;
+                    }
+
+                    #recommend .re_content1 {
+                        color: blue;
+                    }
+
+                    #recommend .re_content2 {
+                        color: blue;
+                    }
+
+                    #recommend .re_content3 {
+                        color: red;
+                    }
+
+                    #recommend .re_content4 {
+                        color: green;
+                    }
+
+                    #recommend .re_content5 {
+                        color: green;
+                    }
+
+                    #recommend .re_content6 {
+                        color: orange;
+                    }
+
+                    #recommend .re_address1 strong,
+                    .re_address2 strong,
+                    .re_address3 strong,
+                    .re_address4 strong,
+                    .re_address5 strong,
+                    .re_address6 strong {
+                        font-size: 13px;
+                    }
+
+                    #recommend .re_address1,
+                    .re_address2 {
+                        color: blue;
+                    }
+
+                    #recommend .re_address3 {
+                        color: red;
+                    }
+
+                    #recommend .re_address4,
+                    .re_address5 {
+                        color: green;
+                    }
+
+                    #recommend .re_address6 {
+                        color: orange;
+                    }
+
+                    #recommend .item1words strong,
+                    #recommend .item2words strong,
+                    #recommend .item3words strong,
+                    #recommend .item4words strong,
+                    #recommend .item5words strong,
+                    #recommend .item6words strong {
+                        padding: 4px;
+                    }
+
+                    #recommend .item1,
+                    .item2 {
+                        box-shadow: 3px 3px 3px blue;
+                    }
+
+                    #recommend .item3 {
+                        box-shadow: 3px 3px 3px red;
+                    }
+
+                    #recommend .item4,
+                    .item5 {
+                        box-shadow: 3px 3px 3px green;
+                    }
+
+                    #recommend .item6 {
+                        box-shadow: 3px 3px 3px orange;
+                    }
+
+                    #recommend .item1 {
+                        position: relative;
+                        z-index : 0;
+                    }
+
+                    #recommend .item1words {
+                        top             : 0;
+                        left            : 0;
+                        font-size       : 20px;
+                        padding         : 5px;
+                        position        : absolute;
+                        background-color: blue;
+                        color           : white;
+                        z-index         : 5;
+                        border-radius   : 0 10px 10px 0;
+                    }
+
+                    #recommend .item2 {
+                        position: relative;
+                        z-index : 0;
+                    }
+
+                    #recommend .item2words {
+                        top             : 0;
+                        left            : 0;
+                        font-size       : 20px;
+                        padding         : 5px;
+                        position        : absolute;
+                        background-color: blue;
+                        color           : white;
+                        z-index         : 5;
+                        border-radius   : 0 10px 10px 0;
+                    }
+
+                    #recommend .item3 {
+                        position: relative;
+                        z-index : 0;
+                    }
+
+                    #recommend .item3words {
+                        top             : 0;
+                        left            : 0;
+                        font-size       : 20px;
+                        padding         : 5px;
+                        position        : absolute;
+                        background-color: red;
+                        color           : white;
+                        z-index         : 5;
+                        border-radius   : 0 10px 10px 0;
+                    }
+
+                    #recommend .item4 {
+                        position: relative;
+                        z-index : 0;
+                    }
+
+                    #recommend .item4words {
+                        top             : 0;
+                        left            : 0;
+                        font-size       : 20px;
+                        padding         : 5px;
+                        position        : absolute;
+                        background-color: green;
+                        border-radius   : 0 10px 10px 0;
+                        color           : white;
+                        z-index         : 5;
+                    }
+
+                    #recommend .item5 {
+                        position: relative;
+                        z-index : 0;
+                    }
+
+                    #recommend .item5words {
+                        top             : 0;
+                        left            : 0;
+                        font-size       : 20px;
+                        padding         : 5px;
+                        position        : absolute;
+                        background-color: green;
+                        border-radius   : 0 10px 10px 0;
+                        color           : white;
+                        z-index         : 5;
+                    }
+
+                    #recommend .item6 {
+                        position: relative;
+                        z-index : 0;
+                    }
+
+                    #recommend .item6words {
+                        top             : 0;
+                        left            : 0;
+                        font-size       : 20px;
+                        padding         : 5px;
+                        position        : absolute;
+                        background-color: orange;
+                        border-radius   : 0 10px 10px 0;
+                        color           : white;
+                        z-index         : 5;
+                    }
+
+                    #recommend .item1_container,
+                    #recommend .item2_container,
+                    #recommend .item3_container,
+                    #recommend .item4_container,
+                    #recommend .item5_container,
+                    #recommend .item6_container {
+                        height  : 250px;
+                        width   : 300px;
+                        overflow: hidden;
+                    }
+
+                    #recommend .item1_container img,
+                    #recommend .item2_container img,
+                    #recommend .item3_container img,
+                    #recommend .item4_container img,
+                    #recommend .item5_container img,
+                    #recommend .item6_container img {
+                        transform : scale(1);
+                        transition: all 0.5s ease-out;
+                    }
+
+                    #recommend .item1_container img:hover,
+                    #recommend .item2_container img:hover,
+                    #recommend .item3_container img:hover,
+                    #recommend .item4_container img:hover,
+                    #recommend .item5_container img:hover,
+                    #recommend .item6_container img:hover {
+                        transform: scale(1.2);
+                    }
+
+                    #recommend .item1 i,
+                    #recommend .item2 i,
+                    #recommend .item3 i,
+                    #recommend .item4 i,
+                    #recommend .item5 i,
+                    #recommend .item6 i {
+                        position : absolute;
+                        top      : 0;
+                        right    : 0;
+                        z-index  : 6;
+                        font-size: 20px;
+                        color    : white;
+                    }
+
+                    #recommend .item1words img {
+                        height   : 25px;
+                        width    : 25px;
+                        transform: translateY(20%);
+                    }
+
+                    #recommend .item2words img {
+                        height   : 25px;
+                        width    : 25px;
+                        transform: translateY(20%);
+                    }
+
+                    #recommend .item3words img {
+                        height   : 25px;
+                        width    : 25px;
+                        transform: translateY(20%);
+                    }
+
+                    #recommend .item4words img {
+                        height   : 25px;
+                        width    : 25px;
+                        transform: translateY(20%);
+                    }
+
+                    #recommend .item5words img {
+                        height   : 25px;
+                        width    : 25px;
+                        transform: translateY(20%);
+                    }
+
+                    #recommend .item6words img {
+                        height   : 25px;
+                        width    : 25px;
+                        transform: translateY(20%);
+                    }
+
+                    /* hotspots */
+
+                    #hotspots {
+                        padding: 200px 0;
+                    }
+
+                    #hotspots .item_groups a {
+                        display: block;
+                        margin : 20px 0;
+                    }
+
+                    #hotspots h2 {
+                        padding-bottom: 100px;
+                        text-align    : center;
+                        font-size     : 50px;
+                    }
+
+                    #hotspots .hotimg1 {
+                        /* background-image: url(img/風景宮崎駿大時鐘1.png); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg1 img,
+                    #hotspots .hotimg2 img,
+                    #hotspots .hotimg3 img,
+                    #hotspots .hotimg4 img,
+                    #hotspots .hotimg5 img,
+                    #hotspots .hotimg6 img,
+                    #hotspots .hotimg7 img,
+                    #hotspots .hotimg8 img {
+                        transform : scale(1);
+                        transition: all 0.5s ease-out;
+                    }
+
+                    #hotspots .hotimg1 img:hover,
+                    #hotspots .hotimg2 img:hover,
+                    #hotspots .hotimg3 img:hover,
+                    #hotspots .hotimg4 img:hover,
+                    #hotspots .hotimg5 img:hover,
+                    #hotspots .hotimg6 img:hover,
+                    #hotspots .hotimg7 img:hover,
+                    #hotspots .hotimg8 img:hover {
+                        transform: scale(1.2);
+                    }
+
+                    #hotspots .hotimg1 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg2 {
+                        /* background-image: url(img/風景東京三省堂鍋爐爺爺.jpg); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg2 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg3 {
+                        /* background-image: url(img/風景九州_白谷雲水峽1.jpg); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg3 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg4 {
+                        /* background-image: url(img/風景九州_琪琪麵包店.png); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg4 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg5 {
+                        /* background-image: url(img/風景北海道_萬平旅館.jpg); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg5 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg6 {
+                        /* background-image: url(img/風景四國_王子酒店4.png); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg6 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg7 {
+                        /* background-image: url(img/風景琪琪小舖圖片1.gif); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg7 i {
+                        position   : absolute;
+                        top        : 5px;
+                        right      : 5px;
+                        color      : white;
+                        text-shadow: 3px 3px 3px gray;
+                    }
+
+                    #hotspots .hotimg8 {
+                        /* background-image: url(img/風景四國銀山溫泉.jpg); */
+                        background-position: center;
+                        background-repeat  : no-repeat;
+                        background-size    : cover;
+                        width              : 250px;
+                        height             : 250px;
+                        position           : relative;
+                        text-shadow        : 3px 3px 3px gray;
+                        overflow           : hidden;
+                    }
+
+                    #hotspots .hotimg8 i {
+                        position: absolute;
+                        top     : 5px;
+                        right   : 5px;
+                        color   : white;
+                    }
+
+                    /* footer */
+
+                    #footer {
+                        width           : 100%;
+                        padding         : 20px 0;
+                        background-color: #ccc;
+                    }
+
+                    #footer .item_group {
+                        text-align: center;
+                        color     : white;
+                    }
+
+                    #footer .icon_groups {
+                        display        : flex;
+                        justify-content: space-evenly;
+                        align-items    : center;
+                        padding        : 5px 0;
+                    }
+
+                    #footer .footer_phone,
+                    .footer_address {
+                        padding: 5px;
+                    }
+
+                    #footer .footer_phone i,
+                    .footer_address i {
+                        display  : inline-block;
+                        transform: translateX(-50%);
+                    }
+
+                    #footer .footer_phone span,
+                    .footer_address span {
+                        font-size: 20px;
+                    }
+
+                    #footer p {
+                        padding-top: 5px;
+                    }
+
+                    /* up_icon*/
+
+                    @keyframes up_down {
+                        0% {
+                            transform: translateY(0%);
+                        }
+
+                        33%,
+                        66% {
+                            transform: translateY(5%);
+                        }
+
+                        50% {
+                            transform: translateY(0%);
+                        }
+
+                        100% {
+                            transform: translateY(0%);
+                        }
+                    }
+
+                    #up_icon .item_groups img {
+                        /* background-image:url(img/琪琪去背.png);
+            height:500px;
+            width:500px; */
+                        position                 : fixed;
+                        bottom                   : 5px;
+                        right                    : 5px;
+                        animation-name           : up_down;
+                        animation-duration       : 5s;
+                        animation-iteration-count: infinite;
+                        z-index                  : 99;
+                    }
+
+                    /* RWD part  */
+
+                    @media screen and (max-width:1199px) {
+                        .item_groups {
+                            display        : flex;
+                            flex-wrap      : wrap;
+                            align-items    : center;
+                            justify-content: space-around;
+                        }
+
+                        #nav .icons i {
+                            width          : 14px;
+                            display        : flex;
+                            color          : white;
+                            justify-content: space-between;
+                            align-items    : center;
+                        }
+
+                        /* banner  */
+                        #banner .banner_words {
+                            position        : absolute;
+                            bottom          : 0;
+                            left            : 0;
+                            width           : 250px;
+                            height          : 80px;
+                            color           : white;
+                            font-size       : 20px;
+                            display         : flex;
+                            align-items     : center;
+                            justify-content : center;
+                            border-radius   : 10px;
+                            background-color: rgba(240, 128, 128, 0.6);
+                        }
+
+                        #aboutjapan .about_words p {
+                            padding: 20px;
+                        }
+
+                        #up_icon .item_groups img {
+                            height                   : 130px;
+                            width                    : 130px;
+                            position                 : fixed;
+                            bottom                   : 5px;
+                            right                    : 5px;
+                            animation-name           : up_down;
+                            animation-duration       : 5s;
+                            animation-iteration-count: infinite;
+                            z-index                  : 99;
+                        }
+                    }
+
+                    @media screen and (max-width:999px) {
+                        .item_groups {
+                            display        : flex;
+                            flex-wrap      : wrap;
+                            align-items    : center;
+                            justify-content: space-around;
+                        }
+
+                        .hb {
+                            cursor          : pointer;
+                            border          : 2px solid pink;
+                            width           : 40px;
+                            height          : 40px;
+                            position        : fixed;
+                            background-color: pink;
+                            top             : 10px;
+                            right           : 10px;
+                            z-index         : 99;
+                            display         : block;
+                            border-radius   : 25%;
+                            transform       : scale(1);
+                            transition      : border-radius .2s, transform .2s .2s cubic-bezier(.54, 1.51, .61, -0.26);
+                        }
+
+                        .nav1 {
+                            text-align: center;
+                        }
+
+                        #nav .icons {
+                            display: none;
+                        }
+
+                        #nav .icons i {
+                            width          : 14px;
+                            display        : flex;
+                            color          : white;
+                            justify-content: left;
+                            align-items    : center;
+                            display        : none;
+                        }
+
+                        #nav .items ul {
+                            display: none;
+                        }
+
+                        #nav .items {
+                            width    : 80%;
+                            /* border: 1px solid red; */
+                            /* border:1px solid yellow; */
+                        }
+
+                        #nav {
+                            width              : 100%;
+                            /* background-color: rgba(255, 0, 0, 0.3); */
+                            margin             : 0 auto;
+                            position           : fixed;
+                            top                : 0;
+                            left               : 0;
+                            right              : 0;
+                            z-index            : 3;
+                            background         : linear-gradient(90deg, rgba(0, 0, 0, 0)15%, rgba(255, 85, 78, 0.3));
+                            background         : -moz-linear-gradient(90deg, rgba(0, 0, 0, 0)15%, rgba(255, 85, 78, 0.3));
+                            background         : -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0)15%, rgba(255, 85, 78, 0.3));
+                            background         : -o-linear-gradient(90deg, rgba(0, 0, 0, 0)15%, rgba(255, 85, 78, 0.3));
+                        }
+
+                        #banner .video video {
+                            width     : 100%;
+                            height    : auto;
+                            overflow  : hidden;
+                            z-index   : 0;
+                            object-fit: fill;
+                        }
+
+                        #banner .banner_words {
+                            position        : absolute;
+                            bottom          : 0;
+                            left            : 0;
+                            width           : 250px;
+                            height          : 80px;
+                            color           : white;
+                            font-size       : 20px;
+                            display         : flex;
+                            align-items     : center;
+                            justify-content : center;
+                            border-radius   : 10px;
+                            background-color: rgba(240, 128, 128, 0.6);
+                        }
+
+                        #aboutjapan .about_words {
+                            padding: 30px;
+                        }
+
+                        #animations h2 {
+                            font-size: 30px;
+                        }
+
+                        #hotspots {
+                            padding: 100px 20px;
+                        }
+
+                        #up_icon .item_groups img {
+                            height                   : 130px;
+                            width                    : 130px;
+                            position                 : fixed;
+                            bottom                   : 5px;
+                            right                    : 5px;
+                            animation-name           : up_down;
+                            animation-duration       : 5s;
+                            animation-iteration-count: infinite;
+                            z-index                  : 99;
+                        }
+
+                        /*下拉選單*/
+                        /* #menu-control {
+                            display: none;
+                        }
+                        .hb {
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+                            width: 40px;
+                            height: 40px;
+                            background-color: #000;
+                        } */
+                    }
+
+                    @media screen and (max-width:767px) {
+                        .item_groups {
+                            justify-content: space-around;
+                        }
+
+                        #role {
+                            display: none;
+                        }
+
+                        #role_phone {
+                            display: block;
+                        }
+
+                        #role_phone img {
+                            width: 100%;
+                        }
+
+                        #nav img {
+                            height        : 80px;
+                            width         : 80px;
+                            vertical-align: middle;
+                        }
+
+                        .hb {
+                            width : 30px;
+                            height: 30px;
+                            top   : 10px;
+                        }
+
+                        .hb span {
+                            width: 30px;
+                        }
+
+                        #nav .items {
+                            /* border:1px solid red; */
+                            width: 75%;
+                        }
+
+                        #banner .banner_words {
+                            width    : 200px;
+                            height   : 60px;
+                            font-size: 16px;
+                        }
+
+                        #aboutjapan {
+                            padding: 50px 0 50px 0;
+                        }
+
+                        #aboutjapan .container img {
+                            height   : 60px;
+                            width    : 60px;
+                            display  : inline-block;
+                            transform: translateY(32%);
+                        }
+
+                        #aboutjapan h2 {
+                            text-align: center;
+                            font-size : 40px;
+                        }
+
+                        #aboutjapan .about_img {
+                            position  : relative;
+                            width     : 350px;
+                            height    : 350px;
+                            margin-top: 50px;
+                        }
+
+                        #aboutjapan p {
+                            font-size: 15px;
+                        }
+
+                        #aboutjapan .main_island {
+                            width : 200px;
+                            height: 200px;
+                        }
+
+                        #aboutjapan .main_island2 {
+                            width : 200px;
+                            height: 200px;
+                        }
+
+                        #aboutjapan .main {
+                            top   : -300%;
+                            left  : -100%;
+                            width : 100px;
+                            height: 200px;
+                        }
+
+                        #aboutjapan .north_island {
+                            width : 90px;
+                            height: 90px;
+                        }
+
+                        #aboutjapan .north_island2 {
+                            width : 90px;
+                            height: 90px;
+                        }
+
+                        #aboutjapan .north {
+                            width : 80px;
+                            height: 80px;
+                        }
+
+                        #aboutjapan .west_island {
+                            width : 100px;
+                            height: 100px;
+                        }
+
+                        #aboutjapan .west_island2 {
+                            width : 100px;
+                            height: 100px;
+                            bottom: 25px;
+                            left  : 0;
+                        }
+
+                        #aboutjapan .south_island {
+                            width : 95px;
+                            height: 95px;
+                        }
+
+                        #aboutjapan .south_island2 {
+                            width : 95px;
+                            height: 95px;
+                            bottom: 13px;
+                            left  : 60px;
+                        }
+
+                        #aboutjapan .about_words {
+                            padding: 30px;
+                        }
+
+                        #likeanimation .like_words {
+                            padding: 20px;
+                        }
+
+                        #likeanimation .like_words h2 {
+                            padding  : 50px 0;
+                            font-size: 30px;
+                        }
+
+                        #likeanimation .like_words p {
+                            font-size: 20px;
+                        }
+
+                        .swiper_container1 {
+                            width        : 400px;
+                            height       : 400px;
+                            position     : absolute;
+                            margin-bottom: 20px;
+                            border       : 5px solid pink;
+                            box-shadow   : 10px 10px 12px pink;
+                        }
+
+                        #recommend h2 {
+                            font-size: 35px;
+                        }
+
+                        #hotspots h2 {
+                            font-size: 35px;
+                        }
+
+                        #hotspots {
+                            padding: 80px 20px;
+                        }
+
+                        #up_icon .item_groups img {
+                            height: 130px;
+                            width : 130px;
+                        }
+
+                        #nav .icons {
+                            display: none;
+                        }
+                    }
+
+                    @media screen and (max-width:499px) {
+                        #nav img {
+                            height        : 60px;
+                            width         : 60px;
+                            vertical-align: middle;
+                        }
+
+                        .hb {
+                            width : 30px;
+                            height: 30px;
+                            top   : 10px;
+                        }
+
+                        .hb span {
+                            width: 30px;
+                        }
+
+                        #banner .banner_words {
+                            display: none;
+                        }
+
+                        #aboutjapan {
+                            padding: 40px 0 40px 0;
+                        }
+
+                        #aboutjapan h2 {
+                            font-size: 30px;
+                        }
+
+                        #aboutjapan .about_img {
+                            position  : relative;
+                            width     : 300px;
+                            height    : 300px;
+                            margin-top: 50px;
+                        }
+
+                        #aboutjapan .about_words {
+                            padding: 30px;
+                        }
+
+                        #aboutjapan .north {
+                            display  : block;
+                            position : absolute;
+                            top      : -25%;
+                            left     : -5%;
+                            transform: rotate(45deg);
+                            width    : 50px;
+                            height   : 50px;
+                            opacity  : 0;
+                            z-index  : 1;
+                        }
+
+                        #aboutjapan .main_island {
+                            /* border: 1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/日本本州.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 180px;
+                            height           : 180px;
+                            top              : 0;
+                            bottom           : 0;
+                            right            : 0;
+                            left             : 0;
+                            margin           : auto;
+                            opacity          : 1;
+                            transition       : all 1s;
+                        }
+
+                        #aboutjapan .main_island2 {
+                            /* border: 1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/橘色本州.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 180px;
+                            height           : 180px;
+                            top              : 0;
+                            bottom           : 0;
+                            right            : 0;
+                            left             : 0;
+                            margin           : auto;
+                        }
+
+                        #aboutjapan .main_island p.main_word {
+                            color    : black;
+                            position : absolute;
+                            right    : 15%;
+                            bottom   : 40%;
+                            /* right :0; */
+                            /* bottom:0; */
+                            /* margin:auto; */
+                        }
+
+                        #aboutjapan .main {
+                            /* background-color: rgba(0, 0, 0, 0.5); */
+                            display   : block;
+                            position  : absolute;
+                            top       : -300%;
+                            left      : -100%;
+                            transform : rotate(45deg);
+                            width     : 100px;
+                            height    : 200px;
+                            /* opacity: 0; */
+                            color     : green;
+                            z-index   : 1;
+                        }
+
+                        #aboutjapan .main_island2 p.main2_word {
+                            /* border:1px solid green; */
+                            color     : white;
+                            position  : absolute;
+                            right     : 15%;
+                            bottom    : 40%;
+                            /* right  :0; */
+                            /* bottom :0; */
+                            /* margin :auto; */
+                            transition: all 1s;
+                        }
+
+                        #aboutjapan .north_island {
+                            /* border: 1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/日本北海道.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 73px;
+                            height           : 73px;
+                            top              : 0;
+                            right            : 0;
+                            opacity          : 1;
+                            transition       : all 1s;
+                        }
+
+                        #aboutjapan .north_island2 {
+                            /* border: 2px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/紅色北海道.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 73px;
+                            height           : 73px;
+                            top              : 0;
+                            right            : 0;
+                        }
+
+                        #aboutjapan .north_island p.north_word {
+                            /* border:1px solid green; */
+                            /* color: white; */
+                            color    : black;
+                            position : absolute;
+                            transform: translateX(-50%) translateY(-50%);
+                            left     : 50%;
+                            top      : 50%;
+                            /* right :0; */
+                            /* bottom:0; */
+                            /* margin:auto; */
+                        }
+
+                        #aboutjapan .north_island2 p.north2_word {
+                            /* border:1px solid green; */
+                            color     : white;
+                            position  : absolute;
+                            transform : translateX(-50%) translateY(-50%);
+                            left      : 50%;
+                            top       : 50%;
+                            /* right  :0; */
+                            /* bottom :0; */
+                            /* margin :auto; */
+                            transition: all 1s;
+                        }
+
+                        #aboutjapan .west_island {
+                            /* border:1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/日本九州.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 85px;
+                            height           : 85px;
+                            opacity          : 1;
+                            transition       : all 1s;
+                        }
+
+                        #aboutjapan .west_island2 {
+                            /* border:1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/藍色九州.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 85px;
+                            height           : 85px;
+                            bottom           : 25px;
+                            left             : 0;
+                        }
+
+                        #aboutjapan .west_island p.west_word {
+                            /* border:1px solid green; */
+                            /* color: white; */
+                            color    : black;
+                            position : absolute;
+                            left     : 30%;
+                            top      : 20%;
+                            /* right :0; */
+                            /* bottom:0; */
+                            /* margin:auto; */
+                        }
+
+                        #aboutjapan .west {
+                            /* background-color: rgba(0, 0, 0, 0.5); */
+                            display   : block;
+                            position  : absolute;
+                            top       : -35%;
+                            left      : 10;
+                            transform : rotate(45deg);
+                            width     : 80px;
+                            height    : 80px;
+                            /* opacity: 0; */
+                            color     : green;
+                            z-index   : 1;
+                        }
+
+                        #aboutjapan .west_island2 p.west2_word {
+                            /* border:1px solid green; */
+                            color     : white;
+                            position  : absolute;
+                            left      : 30%;
+                            top       : 20%;
+                            /* right  :0; */
+                            /* bottom :0; */
+                            /* margin :auto; */
+                            transition: all 1s;
+                        }
+
+                        #aboutjapan .south_island {
+                            /* border:1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/日本四國.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 85px;
+                            height           : 85px;
+                            top              : 0;
+                            left             : 0;
+                            opacity          : 1;
+                            transition       : all 1s;
+                        }
+
+                        #aboutjapan .south_island2 {
+                            /* border:1px solid blue; */
+                            position         : absolute;
+                            background-image : url(img/綠色四國.png);
+                            background-size  : contain;
+                            background-repeat: no-repeat;
+                            width            : 85px;
+                            height           : 85px;
+                            bottom           : 5px;
+                            left             : 48px;
+                        }
+
+                        #aboutjapan .south_island p.south_word {
+                            /* border:1px solid green; */
+                            color     : black;
+                            position  : absolute;
+                            left      : 30%;
+                            top       : 18%;
+                            transition: all 1s;
+                            /* right  :0; */
+                            /* bottom :0; */
+                            /* margin :auto; */
+                        }
+
+                        #aboutjapan .south {
+                            display         : block;
+                            position        : absolute;
+                            top             : -40%;
+                            left            : -40%;
+                            transform       : rotate(45deg);
+                            width           : 50px;
+                            height          : 50px;
+                            /* opacity      : 0; */
+                            color           : green;
+                            z-index         : 1;
+                        }
+
+                        #aboutjapan .south_island2 p.south2_word {
+                            /* border:1px solid green; */
+                            color     : white;
+                            position  : absolute;
+                            left      : 30%;
+                            top       : 18%;
+                            /* right  :0; */
+                            /* bottom :0; */
+                            /* margin :auto; */
+                            transition: all 1s;
+                        }
+
+                        /* #animations h2 {
+                            font-size: 30px;
+                        } */
+                        #aboutjapan .about_words {
+                            padding: 20px;
+                        }
+
+                        #likeanimation .like_words {
+                            padding: 15px;
+                        }
+
+                        #likeanimation .like_words h2 {
+                            padding  : 25px 0;
+                            font-size: 30px;
+                        }
+
+                        #likeanimation .like_words p.p_word {
+                            display: none;
+                        }
+
+                        #role {
+                            width: 100%;
+                        }
+
+                        #role div {
+                            background-position  : center;
+                            background-repeat    : repeat;
+                            background-size      : contain;
+                            background-attachment: fixed;
+                            width                : 100%;
+                            height               : 100vh;
+                            overflow             : hidden;
+                            background-image     : url(img/宮崎駿背景圖.png);
+                        }
+
+                        #animations strong {
+                            font-size: 20px;
+                        }
+
+                        .swiper_container1 {
+                            width        : 230px;
+                            height       : 230px;
+                            position     : absolute;
+                            margin-bottom: 20px;
+                            border       : 5px solid pink;
+                            box-shadow   : 10px 10px 12px pink;
+                        }
+
+                        #recommend h2 {
+                            font-size: 25px;
+                        }
+
+                        #hotspots h2 {
+                            font-size: 25px;
+                        }
+
+                        #hotspots {
+                            padding: 80px 0;
+                        }
+
+                        #up_icon .item_groups img {
+                            height: 80px;
+                            width : 80px;
+                        }
+
+                        #footer .footer_phone i,
+                        .footer_address i {
+                            display  : inline-block;
+                            transform: translateX(-50%);
+                            font-size: 15px;
+                        }
+
+                        #footer .footer_phone span,
+                        .footer_address span {
+                            font-size: 18px;
+                        }
+                    }
